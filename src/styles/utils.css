@@ -1,0 +1,5 @@
+@layer utilities {
+    .u-font-display {
+        @apply font-display uppercase tracking-wide;
+    }
+}
