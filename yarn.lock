@@ -187,14 +187,6 @@
     "@vercel/nft" "^0.22.0"
     esbuild "^0.14.48"
 
-"@sveltejs/adapter-vercel@^1.0.0-next.76":
-  version "1.0.0-next.76"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-vercel/-/adapter-vercel-1.0.0-next.76.tgz#4749413080a187c14995d7f74176899c18824c1b"
-  integrity sha512-Od9DBfeMwWC/sZNeCJw4TYVE3LMR8lGJivSdkXWgpvksgG+QizLyzTfvBacapId3wcu+7X4PPTLoH00o5iQGEQ==
-  dependencies:
-    "@vercel/nft" "^0.22.0"
-    esbuild "^0.15.7"
-
 "@sveltejs/kit@next":
   version "1.0.0-next.480"
   resolved "https://registry.yarnpkg.com/@sveltejs/kit/-/kit-1.0.0-next.480.tgz#cbe3cd7051d50480ad1f3515492c7db779465f78"
@@ -940,7 +932,7 @@ esbuild@^0.14.48:
     esbuild-windows-64 "0.14.54"
     esbuild-windows-arm64 "0.14.54"
 
-esbuild@^0.15.6, esbuild@^0.15.7:
+esbuild@^0.15.6:
   version "0.15.7"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.15.7.tgz#8a1f1aff58671a3199dd24df95314122fc1ddee8"
   integrity sha512-7V8tzllIbAQV1M4QoE52ImKu8hT/NLGlGXkiDsbEU5PS6K8Mn09ZnYoS+dcmHxOS9CRsV4IRAMdT3I67IyUNXw==
