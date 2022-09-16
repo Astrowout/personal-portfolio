@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client/core';
+import { ApolloClient, InMemoryCache } from '@apollo/client/core/core.cjs';
 import { PUBLIC_API_URL } from '$env/static/public';
 
 const apolloClient = new ApolloClient({
