@@ -18,6 +18,11 @@ export default gql`
                 label
                 slug
             }
+            mainCta {
+                id
+                label
+                slug
+            }
         }
     }
 `;
