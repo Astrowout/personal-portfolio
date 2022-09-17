@@ -7,14 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: "#0f172a",
-      },
       fontFamily: {
+        serif: [
+          'Alegreya',
+          ...defaultTheme.fontFamily.serif,
+        ],
         display: [
           'Newake',
           ...defaultTheme.fontFamily.sans,
-        ]
+        ],
       }
     },
     container: {

@@ -10,7 +10,7 @@ export async function load() {
     
     if (data) {
         return data.global;
-    }
+    }``
  
     throw error(404, 'Not found');
 }
