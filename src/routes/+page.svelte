@@ -1,10 +1,14 @@
 <script lang="ts">
-    import Music from '../components/Music/Music.svelte';
+    import Music from '$lib/components/Music/Music.svelte';
+    import PageBody from '$lib/components/PageBody/PageBody.svelte';
 
     export let data;
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<svelte:head>
+    <title>Hi 👋 | Wout Vandesompele</title>
+</svelte:head>
+
+<PageBody body={data.body} />
 
 <Music spotifyId={data.spotifySongId}></Music>

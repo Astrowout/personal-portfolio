@@ -14,10 +14,11 @@ const apolloClient = new ApolloClient({
     },
 });
 
-const query = async (q) => {
+const query = async (q, variables = {}) => {
     return apolloClient.query({
         query: q,
-    })
+        variables,
+    });
 }
 
 export default query;

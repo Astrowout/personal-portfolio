@@ -2,7 +2,7 @@ import { gql } from '@apollo/client/core/core.cjs';
 
 export default gql`
     query GlobalQuery {
-        global(
+        global (
             where: {
                 id: "cl80kqj8v5rvq0cuiey1q43sr"
             }

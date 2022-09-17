@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import query from "$lib/apollo";
 
-import GLOBAL_QUERY from "../queries/globals";
+import GLOBAL_QUERY from "$lib/queries/globals";
 
 export const prerender = true;
  
@@ -10,7 +10,7 @@ export async function load() {
     
     if (data) {
         return data.global;
-    }``
+    }
  
     throw error(404, 'Not found');
 }

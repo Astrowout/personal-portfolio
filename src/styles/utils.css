@@ -2,4 +2,16 @@
     .u-font-display {
         @apply font-display tracking-wider;
     }
+
+    .u-prose h1 {
+        @apply text-2xl sm:text-3xl lg:text-4xl leading-normal sm:leading-normal lg:leading-normal;
+    }
+
+    .u-prose h2 {
+        @apply mt-6 sm:mt-8 lg:mt-12 text-lg sm:text-xl lg:text-2xl leading-normal sm:leading-normal lg:leading-normal;
+    }
+
+    .u-max-w-prose {
+        @apply max-w-[74ch];
+    }
 }
