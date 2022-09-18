@@ -3,6 +3,7 @@ import { gql } from '@apollo/client/core/core.cjs';
 
 export default gql`
     fragment heroFields on Hero {
+        id
         headline {
             html
         }
@@ -11,6 +12,14 @@ export default gql`
             alt
             width
             height
+        }
+    }
+
+    fragment sectionFields on Section {
+        id
+        heading {
+            subtitle
+            title
         }
     }
 
@@ -24,6 +33,7 @@ export default gql`
             title
             body {
                 ...heroFields
+                ...sectionFields
             }
         }
     }

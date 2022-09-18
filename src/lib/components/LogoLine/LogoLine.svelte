@@ -1,5 +1,5 @@
 <script lang="ts">
-import Logo from '$lib/components/Logo/Logo.svelte';
+import Logo from '../Logo/Logo.svelte';
 
 const REPEAT_AMOUNT = 28;
 

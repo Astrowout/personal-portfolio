@@ -1,8 +1,10 @@
 <script lang="ts">
-import Hero from '$lib/components/Hero/Hero.svelte';
+import Hero from '../Hero/Hero.svelte';
+import Section from '../Section/Section.svelte';
 
 const components = {
     "Hero": Hero,
+    "Section": Section,
 };
 
 export let body;

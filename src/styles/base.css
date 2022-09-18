@@ -1,5 +1,5 @@
 @layer base {
     :root {
-        @apply bg-stone-100 font-serif overflow-x-hidden;
+        @apply bg-stone-100 font-serif overflow-x-hidden pointer-events-none;
     }
 }

@@ -11,5 +11,5 @@ const renderComponent = () => {
         <slot></slot>
     </span>
 
-    <div class="absolute inset-0 bg-slate-300 rounded-xl -z-10 translate-y-0.5"></div>
+    <div class="absolute inset-0 w-full h-full bg-slate-300 rounded-xl -z-10 translate-y-0.5"></div>
 </svelte:element>

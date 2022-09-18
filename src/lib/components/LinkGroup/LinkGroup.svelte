@@ -1,9 +1,9 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import { slide } from 'svelte/transition';
+import { fly } from 'svelte/transition';
 import { expoOut } from 'svelte/easing';
 
-import Link from '$lib/components/Link/Link.svelte';
+import Link from '../Link/Link.svelte';
 
 export let title = "";
 export let links = [];
@@ -29,8 +29,8 @@ const lineAnim = {
 <div class="flex flex-col gap-y-4">
     {#if title && mounted}
         <h4
-            class="u-font-display uppercase text-md sm:text-lg md:text-xl text-slate-400"
-            in:slide={lineAnim}
+            class="text-md sm:text-lg md:text-xl text-slate-400"
+            in:fly={lineAnim}
         >
             { title }
         </h4>

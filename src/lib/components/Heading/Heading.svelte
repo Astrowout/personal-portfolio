@@ -1,6 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import { slide } from 'svelte/transition';
+import { fly } from 'svelte/transition';
 import { expoOut } from 'svelte/easing';
 
 export let subtitle = "";
@@ -27,7 +27,7 @@ const lineAnim = {
     {#if title && mounted}
         <h2
             class="u-font-display uppercase text-2xl sm:text-3xl md:text-4xl text-slate-900"
-            in:slide={lineAnim}
+            in:fly={lineAnim}
         >
             { title }
         </h2>
@@ -36,7 +36,7 @@ const lineAnim = {
     {#if subtitle && mounted}
         <h3
             class="order-first font-serif uppercase text-2xl sm:text-3xl md:text-4xl text-slate-400"
-            in:slide={{
+            in:fly={{
                 ...lineAnim,
                 delay: ANIM_DELAY + 100,
             }}

@@ -1,5 +1,6 @@
 import { SvelteComponentTyped } from 'svelte';
-import { Props as LinkProps } from "$lib/components/Link/Link.svelte";
+
+import { Props as LinkProps } from "../Link/Link.svelte";
 
 export interface Props {
     class?: string;

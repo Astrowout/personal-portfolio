@@ -3,7 +3,7 @@ import { page } from '$app/stores';
 export let items = [];
 </script>
 
-<div class="fixed w-full inset-x-0 bottom-8 pointer-events-none flex justify-center">
+<div class="fixed w-full z-50 inset-x-0 bottom-8 pointer-events-none flex justify-center">
     <nav class="bg-slate-900/90 rounded-xl backdrop-blur-sm shadow-md pointer-events-auto">
         <ul class="flex text-white -mx-3 u-font-display sm:text-lg px-7">
             {#each items as item (item.id)}
