@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Music from '$lib/components/Music/Music.svelte';
     import PageBody from '$lib/components/PageBody/PageBody.svelte';
 
     export let data;
@@ -10,5 +9,3 @@
 </svelte:head>
 
 <PageBody body={data.body} />
-
-<Music spotifyId={data.spotifySongId}></Music>

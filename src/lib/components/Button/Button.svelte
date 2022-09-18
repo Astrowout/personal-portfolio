@@ -1,9 +1,9 @@
 <script lang="ts">
-    export let href = "";
+export let href = "";
 
-    const renderComponent = () => {
-        return href ? "a" : "button";
-    }
+const renderComponent = () => {
+    return href ? "a" : "button";
+}
 </script>
 
 <svelte:element this={renderComponent()} {...$$props}  class="font-medium text-lg relative group">

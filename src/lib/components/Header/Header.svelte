@@ -1,29 +1,29 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-    import { scale } from 'svelte/transition';
-    import { expoOut } from 'svelte/easing';
-    
-    import Logo from '../Logo/Logo.svelte';
-    import Button from '../Button/Button.svelte';
+import { onMount } from 'svelte';
+import { scale } from 'svelte/transition';
+import { expoOut } from 'svelte/easing';
 
-    export let cta;
+import Logo from '../Logo/Logo.svelte';
+import Button from '../Button/Button.svelte';
 
-    let mounted = false;
-    let ANIM_DURATION = 800;
-    let ANIM_DELAY = 400;
+export let cta;
 
-    onMount(() => {
-        mounted = true;
-	});
+let mounted = false;
+let ANIM_DURATION = 800;
+let ANIM_DELAY = 400;
 
-    const scaleAnim = {
-        delay: ANIM_DELAY,
-        duration: ANIM_DURATION,
-        easing: expoOut,
-    };
+onMount(() => {
+    mounted = true;
+});
+
+const scaleAnim = {
+    delay: ANIM_DELAY,
+    duration: ANIM_DURATION,
+    easing: expoOut,
+};
 </script>
 
-<header class="px-6 sm:px-8 md:px-12 py-5 md:py-8 w-full">
+<header class="px-6 sm:px-8 md:px-12 py-5 md:py-8 w-full bg-stone-100 relative z-10">
     <div class="2xl:container flex justify-between">
         {#if mounted}
             <span transition:scale={scaleAnim}>

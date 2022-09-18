@@ -1,11 +1,11 @@
 <script lang="ts">
-    import Hero from '$lib/components/Hero/Hero.svelte';
+import Hero from '$lib/components/Hero/Hero.svelte';
 
-    const components = {
-        "Hero": Hero,
-    };
+const components = {
+    "Hero": Hero,
+};
 
-    export let body;
+export let body;
 </script>
 
 {#if body && !!body.length}

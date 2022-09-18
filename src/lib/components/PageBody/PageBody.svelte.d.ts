@@ -9,4 +9,4 @@ export interface Slots {
     default: { slotValue: string };
 }
 
-export default class Logo extends SvelteComponentTyped<Props, unknown, Slots> {}
+export default class Component extends SvelteComponentTyped<Props, unknown, Slots> {}

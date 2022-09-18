@@ -23,6 +23,22 @@ export default gql`
                 label
                 slug
             }
+            footer {
+                heading {
+                    subtitle
+                    title
+                }
+                body {
+                    id
+                    title
+                    links {
+                        label
+                        url
+                        external
+                    }
+                }
+                credits
+            }
         }
     }
 `;

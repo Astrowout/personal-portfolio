@@ -1,15 +1,9 @@
 import { SvelteComponentTyped } from 'svelte';
 
-type Image = {
-    url: string;
-    width: number;
-    height: number;
-}
-
 export interface Props {
     class?: string;
-    headline?: string;
-    image?: Image;
+    title?: string;
+    subtitle?: string;
 }
 
 export interface Slots {

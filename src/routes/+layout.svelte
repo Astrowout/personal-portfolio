@@ -16,10 +16,10 @@ export let data;
 
 <Header cta={data.mainCta} />
 
-<main>
+<main class="bg-stone-100 shadow-2xl rounded-b-3xl">
     <slot></slot>
 
     <Navigation items={data.navigation} />
 </main>
 
-<Footer />
+<Footer {...data.footer} />

@@ -1,32 +1,35 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-    import { fly, slide, blur } from 'svelte/transition';
-    import { expoOut } from 'svelte/easing';
+import { onMount } from 'svelte';
+import { fly, blur } from 'svelte/transition';
+import { expoOut } from 'svelte/easing';
 
-    export let headline;
-    export let image;
+export let headline;
+export let image;
+export let __typename;
 
-    let mounted = false;
-    let ANIM_DURATION = 1200;
-    let ANIM_DELAY = 600;
+let mounted = false;
+let ANIM_DURATION = 1400;
+let ANIM_DELAY = 600;
 
-    onMount(() => {
-        mounted = true;
-	});
+onMount(() => {
+    mounted = true;
+});
 
-    const headlineAnim = {
-        delay: ANIM_DELAY,
-        duration: ANIM_DURATION,
-        easing: expoOut,
-    };
+const headlineAnim = {
+    delay: ANIM_DELAY,
+    duration: ANIM_DURATION,
+    y: 40,
+    opacity: 0,
+    easing: expoOut,
+};
 
-    const visualAnim = {
-        delay: ANIM_DELAY,
-        duration: ANIM_DURATION,
-        x: -80,
-        opacity: 1,
-        easing: expoOut,
-    };
+const visualAnim = {
+    delay: ANIM_DELAY + 200,
+    duration: ANIM_DURATION,
+    x: -80,
+    opacity: 1,
+    easing: expoOut,
+};
 </script>
 
 <div class="px-6 sm:px-8 md:px-12 py-8 pb-20 w-full">
@@ -34,7 +37,7 @@
         {#if mounted}
             <div
                 class="u-prose u-max-w-prose"
-                transition:slide={headlineAnim}
+                in:fly={headlineAnim}
             >
                 {@html headline.html}
             </div>
@@ -43,11 +46,11 @@
         {#if image && mounted}
             <div
                 class="drop-shadow-xl"
-                transition:fly={visualAnim}
+                in:fly={visualAnim}
                 >
                 <div    
                     style="clip-path: url(#svgPath); -webkit-clip-path: url(#svgPath);" class="max-w-[240px] md:max-w-full -translate-x-1/4 md:translate-x-0 -z-10"
-                    transition:blur={{ delay: ANIM_DELAY, duration: ANIM_DURATION }}
+                    in:blur={{ delay: ANIM_DELAY + 200, duration: ANIM_DURATION }}
                 >
                     <img
                         alt={image.alt}
