@@ -12,7 +12,7 @@ export let __typename;
 </script>
 
 <footer class="u-space-x py-24 md:py-36 footer:sticky bottom-0 w-full -z-10 pointer-events-auto">
-    <div class="u-container-sm flex flex-col items-center">
+    <div class="u-container-sm overflow-hidden flex flex-col items-center">
         {#if heading}
             <Heading {...heading} />
         {/if}
