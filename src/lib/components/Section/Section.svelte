@@ -14,6 +14,8 @@ export let __typename;
             <Heading {...heading} />
         {/if}
 
-        <PageBody body={body} />
+        <div class="flex flex-col gap-y-16">
+            <PageBody body={body} />
+        </div>
     </div>
 </section>

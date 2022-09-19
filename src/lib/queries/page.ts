@@ -19,6 +19,22 @@ export default gql`
         }
     }
 
+    fragment cardFields on Card {
+        id
+        cols
+        title
+        description {
+            html
+        }
+    }
+
+    fragment gridFields on Grid {
+        id
+        body {
+            ...cardFields
+        }
+    }
+
     fragment dividerFields on Divider {
         id
     }
@@ -31,6 +47,8 @@ export default gql`
         }
         body {
             ...tagGroupFields
+            ...gridFields
+            ...cardFields
         }
     }
 

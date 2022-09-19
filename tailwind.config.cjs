@@ -6,9 +6,10 @@ module.exports = {
     './src/**/*.{html,js,svelte,ts}'
   ],
   safelist: [
-    'col-span-1',
     'col-span-2',
     'col-span-3',
+    'col-span-4',
+    'col-span-6',
   ],
   theme: {
     extend: {
