@@ -14,4 +14,16 @@
     .u-max-w-prose {
         @apply max-w-[74ch];
     }
+
+    .u-container {
+        @apply 2xl:container;
+    }
+    
+    .u-container-sm {
+        @apply max-w-screen-xl mx-auto;
+    }
+
+    .u-space-x {
+        @apply px-6 sm:px-8 md:px-12;
+    }
 }

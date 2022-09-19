@@ -8,8 +8,8 @@ export let id;
 export let __typename;
 </script>
 
-<section class="px-4 sm:px-8 py-16 md:py-24 w-full">
-    <div class="max-w-screen-xl mx-auto flex flex-col items-center">
+<section class="u-space-x py-16 md:py-24 w-full">
+    <div class="u-container-sm flex flex-col items-center">
         {#if heading}
             <Heading {...heading} />
         {/if}

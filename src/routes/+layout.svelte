@@ -1,6 +1,5 @@
 <script lang="ts">
-import { tweened, spring } from 'svelte/motion';
-import { cubicOut } from 'svelte/easing';
+import { spring } from 'svelte/motion';
 
 import inView from "$lib/helpers/in-viewport";
 
@@ -12,20 +11,7 @@ import Navigation from '$lib/components/Navigation/Navigation.svelte';
 
 export let data;
 
-const ANIM_DURATION = 600;
-
-let roundness = tweened(40, {
-	duration: ANIM_DURATION,
-	easing: cubicOut,
-});
-let scaleX = tweened(1, {
-	duration: ANIM_DURATION,
-	easing: cubicOut,
-});
-let scaleXReverse = tweened(1, {
-	duration: ANIM_DURATION,
-	easing: cubicOut,
-});
+let scrollEnd = false;
 
 let coords = spring({ x: 0, y: 0 }, {
     stiffness: 0.1,
@@ -39,15 +25,11 @@ const updateCoords = (e) => {
     }
 }
 
-const handleFooterVisible = () => {
-    $roundness = 80;
-    $scaleX = 0.95;
-    $scaleXReverse = 1.05;
+const handleBottom = () => {
+    scrollEnd = true;
 }
-const handleFooterInvisible = () => {
-    $roundness = 40;
-    $scaleX = 1;
-    $scaleXReverse = 1;
+const handleScrollUp = () => {
+    scrollEnd = false;
 }
 </script>
 
@@ -65,11 +47,11 @@ const handleFooterInvisible = () => {
 <Header cta={data.mainCta} />
 
 <main
-    class="bg-stone-100 shadow-2xl relative overflow-hidden z-0 pointer-events-auto"
-    style="border-bottom-left-radius: {$roundness}px; border-bottom-right-radius: {$roundness}px; transform: scaleX({$scaleX});"
-    on:introend="{() => console.log("gedaan")}"
+    class="bg-stone-100 shadow-xl relative overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-3xl"
+    class:scale-x-95={scrollEnd}
+    style={scrollEnd && 'border-bottom-left-radius: 80px; border-bottom-right-radius: 80px;'}
 >
-    <div style="transform: scaleX({$scaleXReverse});">
+    <div class:scale-x-105={scrollEnd} class="transition-transform duration-500">
         <slot></slot>
     
         <img
@@ -84,8 +66,8 @@ const handleFooterInvisible = () => {
 
 <div
     use:inView={{ bottom: -40 }}
-    on:enter={handleFooterVisible}
-    on:exit={handleFooterInvisible}
+    on:enter={handleBottom}
+    on:exit={handleScrollUp}
 />
 
 <Navigation items={data.navigation} />

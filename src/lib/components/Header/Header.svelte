@@ -23,8 +23,8 @@ const scaleAnim = {
 };
 </script>
 
-<header class="px-6 sm:px-8 md:px-12 py-5 md:py-8 w-full bg-stone-100 relative z-10 pointer-events-auto">
-    <div class="2xl:container flex justify-between">
+<header class="u-space-x py-5 md:py-8 w-full bg-stone-100 relative z-10 pointer-events-auto">
+    <div class="u-container flex justify-between">
         {#if mounted}
             <span transition:scale={scaleAnim}>
                 <Logo />

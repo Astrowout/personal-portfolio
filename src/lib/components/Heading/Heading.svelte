@@ -23,7 +23,7 @@ const lineAnim = {
 };
 </script>
 
-<div class="px-6 sm:px-8 md:px-12 mb-16 flex flex-col text-center items-center">
+<div class="mb-16 flex flex-col text-center items-center">
     {#if title && mounted}
         <h2
             class="u-font-display uppercase text-2xl sm:text-3xl md:text-4xl text-slate-900"

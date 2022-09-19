@@ -2,6 +2,9 @@
     import PageBody from '$lib/components/PageBody/PageBody.svelte';
 
     export let data;
+
+    console.log(data);
+    
 </script>
 
 <svelte:head>

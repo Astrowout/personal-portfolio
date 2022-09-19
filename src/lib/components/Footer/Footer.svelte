@@ -11,13 +11,13 @@ export let credits;
 export let __typename;
 </script>
 
-<footer class="px-4 sm:px-8 py-36 sticky bottom-0 w-full -z-10 pointer-events-auto">
-    <div class="max-w-screen-xl mx-auto flex flex-col items-center">
+<footer class="u-space-x py-24 md:py-36 footer:sticky bottom-0 w-full -z-10 pointer-events-auto">
+    <div class="u-container-sm flex flex-col items-center">
         {#if heading}
             <Heading {...heading} />
         {/if}
 
-        <div class="pb-24 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-24 gap-y-12">
+        <div class="pb-24 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-16 gap-y-12 w-full">
             {#each body as group (group.id)}
                 <LinkGroup {...group} />
             {/each}

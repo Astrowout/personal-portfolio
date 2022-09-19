@@ -2,6 +2,10 @@ import { gql } from '@apollo/client/core/core.cjs';
 
 
 export default gql`
+    fragment tagGroupFields on TagGroup {
+        tags
+    }
+
     fragment heroFields on Hero {
         id
         headline {
@@ -15,11 +19,18 @@ export default gql`
         }
     }
 
+    fragment dividerFields on Divider {
+        id
+    }
+
     fragment sectionFields on Section {
         id
         heading {
             subtitle
             title
+        }
+        body {
+            ...tagGroupFields
         }
     }
 
@@ -33,6 +44,7 @@ export default gql`
             title
             body {
                 ...heroFields
+                ...dividerFields
                 ...sectionFields
             }
         }

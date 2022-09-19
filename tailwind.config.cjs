@@ -5,6 +5,11 @@ module.exports = {
   content: [
     './src/**/*.{html,js,svelte,ts}'
   ],
+  safelist: [
+    'col-span-1',
+    'col-span-2',
+    'col-span-3',
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -16,6 +21,9 @@ module.exports = {
           'Newake',
           ...defaultTheme.fontFamily.sans,
         ],
+      },
+      screens: {
+        'footer': { 'raw': `(min-width: ${defaultTheme.screens.md}) and (min-height: 800px)` },
       }
     },
     container: {
