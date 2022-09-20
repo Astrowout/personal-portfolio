@@ -29,7 +29,7 @@ const lineAnim = {
 <div class="flex flex-col gap-y-4">
     {#if title && mounted}
         <h4
-            class="text-md sm:text-lg md:text-xl text-slate-400"
+            class="text-xl text-slate-400"
             in:fly={lineAnim}
         >
             { title }

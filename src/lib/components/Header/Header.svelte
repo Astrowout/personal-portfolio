@@ -31,7 +31,7 @@ const scaleAnim = {
             </span>
             
             {#if cta}
-                <span transition:scale={scaleAnim}>
+                <span transition:scale={scaleAnim} class="flex">
                     <Button href={cta.slug}>
                         { cta.label }
                     </Button>

@@ -11,8 +11,8 @@ export let credits;
 export let __typename;
 </script>
 
-<footer class="u-space-x py-24 md:py-36 footer:sticky bottom-0 w-full -z-10 pointer-events-auto">
-    <div class="u-container-sm overflow-hidden flex flex-col items-center">
+<footer class="u-space-x pt-24 md:pt-36 pb-36 footer:sticky bottom-0 w-full -z-10 pointer-events-auto overflow-hidden">
+    <div class="u-container-sm flex flex-col items-center">
         {#if heading}
             <Heading {...heading} />
         {/if}
@@ -25,7 +25,7 @@ export let __typename;
         
         <LogoLine class="py-4" />
 
-        <p class="text-slate-400 text-center">
+        <p class="text-stone-300 text-center">
             © {year} wv.com | {credits}
         </p>
     </div>

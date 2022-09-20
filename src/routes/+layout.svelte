@@ -47,8 +47,9 @@ const handleScrollUp = () => {
 <Header cta={data.mainCta} />
 
 <main
-    class="bg-stone-100 shadow-xl relative overflow-hidden z-0 pointer-events-auto transition-transform duration-500 rounded-b-[40px]"
+    class="bg-stone-100 shadow-xl relative overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-[40px] min-h-screen"
     class:scale-x-95={scrollEnd}
+    class:bg-white={scrollEnd}
 >
     <div class:scale-x-105={scrollEnd} class="transition-transform duration-500">
         <slot></slot>

@@ -5,6 +5,8 @@ import TagGroup from '../TagGroup/TagGroup.svelte';
 import Divider from '../Divider/Divider.svelte';
 import Grid from '../Grid/Grid.svelte';
 import Card from '../Card/Card.svelte';
+import Text from '../Text/Text.svelte';
+import Expertise from '../Expertise/Expertise.svelte';
 
 const components = {
     "Hero": Hero,
@@ -13,6 +15,8 @@ const components = {
     "Divider": Divider,
     "Grid": Grid,
     "Card": Card,
+    "Text": Text,
+    "Expertise": Expertise,
 };
 
 export let body;

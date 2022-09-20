@@ -15,10 +15,14 @@ const apolloClient = new ApolloClient({
 });
 
 const query = async (q, variables = {}) => {
-    return apolloClient.query({
-        query: q,
-        variables,
-    });
+    try {      
+        return apolloClient.query({
+            query: q,
+            variables,
+        });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 export default query;

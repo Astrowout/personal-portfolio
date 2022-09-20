@@ -2,7 +2,10 @@
 import { onMount } from 'svelte';
 import { cubicOut } from 'svelte/easing';
 import { tweened } from 'svelte/motion';
+import { page } from '$app/stores';
 
+let className;
+export { className as class };
 export let value = 0;
 export let __typename;
 
@@ -19,9 +22,44 @@ const progress = tweened(0, {
 onMount(() => {
     $progress = value;
 });
+
+let labelKey = "progress.level_1";
+
+$: if (value >= 25 && value < 50) {
+    labelKey = "progress.level_2";
+} else if (value >= 50 && value < 90) {
+    labelKey = "progress.level_3";
+} else if (value >= 90) {
+    labelKey = "progress.level_4";
+}
 </script>
 
-<progress
-    value={$progress}
-    max="100"
-></progress>
+<div class="flex flex-col items-center gap-y-0.5">
+    <progress
+        value={$progress}
+        max="100"
+        class="progress {className}"
+    >
+        <span style="width: {value}%;">
+            {value}%
+        </span>
+    </progress>
+
+    <p class="text-slate-400 text-xs font-medium">
+        {$page.data.t[labelKey]}
+    </p>
+</div>
+
+<style lang="css">
+    .progress {
+        @apply appearance-none h-2 rounded-full overflow-hidden outline outline-1 outline-offset-1 outline-slate-300;
+    }
+    
+    .progress::-webkit-progress-bar {
+        @apply bg-slate-50 shadow-inner;
+    }
+    
+    .progress::-webkit-progress-value {
+        @apply bg-slate-600 rounded-full;
+    }
+</style>

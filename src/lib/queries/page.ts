@@ -3,6 +3,7 @@ import { gql } from '@apollo/client/core/core.cjs';
 
 export default gql`
     fragment tagGroupFields on TagGroup {
+        id
         tags
     }
 
@@ -19,12 +20,43 @@ export default gql`
         }
     }
 
+    fragment songFields on Song {
+        id
+        spotifySongId
+    }
+
+    fragment textFields on Text {
+        id
+        body {
+           html
+        }
+    }
+
+    fragment expertiseFields on Expertise {
+        id
+        title
+        image {
+            url
+            alt
+            width
+            height
+        }
+        progress
+    }
+
     fragment cardFields on Card {
         id
         cols
         title
-        description {
-            html
+        images {
+            url
+            alt
+            width
+            height
+        }
+        body {
+            ...expertiseFields
+            ...songFields
         }
     }
 

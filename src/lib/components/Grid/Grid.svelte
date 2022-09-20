@@ -6,6 +6,6 @@ export let id;
 export let __typename;
 </script>
 
-<div class="w-full grid grid-cols-6 gap-6 lg:gap-8">
+<div class="w-full grid grid-cols-6 gap-6 lg:gap-8 items-start">
     <PageBody body={body} />
 </div>

@@ -3,8 +3,6 @@ import { onMount } from 'svelte';
 import { fly } from 'svelte/transition';
 import { expoOut } from 'svelte/easing';
 
-export let __typename;
-
 let mounted = false;
 let ANIM_DURATION = 1400;
 let ANIM_DELAY = 600;

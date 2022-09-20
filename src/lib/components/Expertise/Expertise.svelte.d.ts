@@ -9,10 +9,9 @@ type Image = {
 
 export interface Props {
     class?: string;
-    cols: string;
     title: string;
-    body: any[];
-    images: Image[];
+    image: Image;
+    progress: number;
 }
 
 export interface Slots {
