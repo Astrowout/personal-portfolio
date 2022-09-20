@@ -29,7 +29,7 @@ export let id;
 		</div>
 
 		{#if progress}
-			<Progress value={progress} class="mx-3 my-1.5" />
+			<Progress value={progress} class="mx-3 my-1.5 translate-y-1" />
 		{/if}
 	</div>
 </div>

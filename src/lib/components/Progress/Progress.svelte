@@ -34,7 +34,7 @@ $: if (value >= 25 && value < 50) {
 }
 </script>
 
-<div class="flex flex-col items-center gap-y-0.5">
+<div class="flex flex-col items-center gap-y-1">
     <progress
         value={$progress}
         max="100"
