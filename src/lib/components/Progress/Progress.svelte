@@ -7,7 +7,6 @@ import { page } from '$app/stores';
 let className;
 export { className as class };
 export let value = 0;
-export let __typename;
 
 let ANIM_DURATION = 1400;
 let ANIM_DELAY = 300;
@@ -34,7 +33,7 @@ $: if (value >= 25 && value < 50) {
 }
 </script>
 
-<div class="flex flex-grow flex-col items-center gap-y-1 {className}">
+<div class="flex flex-grow flex-col items-center gap-y-2 {className}">
     <progress
         value={$progress}
         max="100"
@@ -45,7 +44,7 @@ $: if (value >= 25 && value < 50) {
         </span>
     </progress>
 
-    <p class="text-slate-400 text-xs font-medium">
+    <p class="text-slate-400 text-sm">
         {$page.data.t[labelKey]}
     </p>
 </div>

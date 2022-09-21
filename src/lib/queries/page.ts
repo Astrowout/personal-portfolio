@@ -2,9 +2,28 @@ import { gql } from '@apollo/client/core/core.cjs';
 
 
 export default gql`
+    fragment workGroupFields on WorkGroup {
+        id
+        works {
+            id
+            title
+            slug
+            cols
+            image {
+                url
+                alt
+                width
+                height
+            }
+        }
+    }
+
     fragment tagGroupFields on TagGroup {
         id
-        tags
+        tags {
+            id
+            label
+        }
     }
 
     fragment heroFields on Hero {
@@ -81,6 +100,7 @@ export default gql`
             ...tagGroupFields
             ...gridFields
             ...cardFields
+            ...workGroupFields
         }
     }
 

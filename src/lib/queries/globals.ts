@@ -7,11 +7,6 @@ export default gql`
                 id: "cl80kqj8v5rvq0cuiey1q43sr"
             }
         ) {
-            logo {
-                url
-                width
-                height
-            }
             navigation {
                 id
                 label

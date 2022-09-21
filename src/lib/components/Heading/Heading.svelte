@@ -20,14 +20,19 @@ const lineAnim = {
     delay: ANIM_DELAY,
     duration: ANIM_DURATION,
     easing: expoOut,
+    y: 40,
+    opacity: 0,
 };
 </script>
 
-<div class="mb-16 flex flex-col text-center items-center">
+<div class="mb-12 md:mb-16 flex flex-col text-center items-center">
     {#if title && mounted}
         <h2
             class="u-font-display uppercase text-3xl sm:text-4xl text-slate-900"
-            in:fly={lineAnim}
+            in:fly={{
+                ...lineAnim,
+                delay: ANIM_DELAY + 100,
+            }}
         >
             { title }
         </h2>
@@ -36,10 +41,7 @@ const lineAnim = {
     {#if subtitle && mounted}
         <h3
             class="order-first font-serif uppercase text-3xl sm:text-4xl text-slate-400"
-            in:fly={{
-                ...lineAnim,
-                delay: ANIM_DELAY + 100,
-            }}
+            in:fly={lineAnim}
         >
             { subtitle }
         </h3>

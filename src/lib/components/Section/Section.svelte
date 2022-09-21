@@ -9,7 +9,7 @@ export let __typename;
 </script>
 
 <section class="u-space-x py-16 md:py-24 w-full">
-    <div class="u-container-sm flex flex-col items-center">
+    <div class="u-container-sm flex flex-col">
         {#if heading}
             <Heading {...heading} />
         {/if}

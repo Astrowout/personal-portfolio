@@ -5,6 +5,7 @@ export let title;
 export let image;
 export let progress;
 export let id;
+export let __typename;
 </script>
 
 <div class="rounded-xl border-2 border-slate-200 bg-slate-100 pl-4 pr-5 py-3">

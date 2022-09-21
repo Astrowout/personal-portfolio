@@ -7,6 +7,7 @@ import Grid from '../Grid/Grid.svelte';
 import Card from '../Card/Card.svelte';
 import Text from '../Text/Text.svelte';
 import Expertise from '../Expertise/Expertise.svelte';
+import WorkGroup from '../WorkGroup/WorkGroup.svelte';
 
 const components = {
     "Hero": Hero,
@@ -17,6 +18,7 @@ const components = {
     "Card": Card,
     "Text": Text,
     "Expertise": Expertise,
+    "WorkGroup": WorkGroup,
 };
 
 export let body;
