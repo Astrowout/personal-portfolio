@@ -5,13 +5,17 @@ import LinkGroup from '../LinkGroup/LinkGroup.svelte';
 
 const year = new Date().getFullYear();
 
+export let asPage = false;
 export let heading;
 export let body;
 export let credits;
 export let __typename;
 </script>
 
-<footer class="u-space-x pt-24 md:pt-36 pb-36 footer:sticky bottom-0 w-full -z-10 pointer-events-auto overflow-hidden">
+<svelte:element
+    this={asPage ? 'section' : 'footer'}
+    class="u-space-x pointer-events-auto overflow-hidden {asPage ? 'u-space-y-sm' : 'pt-24 md:pt-36 pb-36 footer:sticky bottom-0 w-full -z-10'}"
+>
     <div class="u-container-sm flex flex-col items-center">
         {#if heading}
             <Heading {...heading} />
@@ -29,4 +33,4 @@ export let __typename;
             © {year} wv.com | {credits}
         </p>
     </div>
-</footer>
+</svelte:element>

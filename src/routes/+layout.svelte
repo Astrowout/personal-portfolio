@@ -1,5 +1,6 @@
 <script lang="ts">
 import { spring } from 'svelte/motion';
+import { page } from '$app/stores';
 
 import inView from "$lib/helpers/in-viewport";
 
@@ -10,6 +11,8 @@ import Footer from '$lib/components/Footer/Footer.svelte';
 import Navigation from '$lib/components/Navigation/Navigation.svelte';
 
 export let data;
+
+$: isContactPage = $page.routeId === "contact";
 
 let scrollEnd = false;
 
@@ -62,13 +65,15 @@ const handleScrollUp = () => {
     </div>
 </main>
 
-<Footer {...data.footer} />
+{#if !isContactPage}
+    <Footer {...data.footer} />
 
-<div
-    use:inView={{ bottom: -40 }}
-    on:enter={handleBottom}
-    on:exit={handleScrollUp}
-/>
+    <div
+        use:inView={{ bottom: -40 }}
+        on:enter={handleBottom}
+        on:exit={handleScrollUp}
+    />
+{/if}
 
 <Navigation items={data.navigation} />
 

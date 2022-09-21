@@ -8,7 +8,7 @@ export let id;
 export let __typename;
 </script>
 
-<section class="u-space-x py-16 md:py-24 w-full">
+<section class="u-space-x u-space-y w-full">
     <div class="u-container-sm flex flex-col">
         {#if heading}
             <Heading {...heading} />

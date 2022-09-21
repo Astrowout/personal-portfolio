@@ -4,6 +4,7 @@ import { Props as HeadingProps } from "../Heading/Heading.svelte";
 
 export interface Props {
     class?: string;
+    asPage?: boolean;
     heading: HeadingProps;
     body: any[];
 }

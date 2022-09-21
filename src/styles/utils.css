@@ -26,4 +26,12 @@
     .u-space-x {
         @apply px-6 sm:px-8 md:px-12;
     }
+
+    .u-space-y {
+        @apply py-16 md:py-24;
+    }
+
+    .u-space-y-sm {
+        @apply py-8;
+    }
 }
