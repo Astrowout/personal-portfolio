@@ -34,11 +34,11 @@ $: if (value >= 25 && value < 50) {
 }
 </script>
 
-<div class="flex flex-col items-center gap-y-1">
+<div class="flex flex-grow flex-col items-center gap-y-1 {className}">
     <progress
         value={$progress}
         max="100"
-        class="progress {className}"
+        class="progress"
     >
         <span style="width: {value}%;">
             {value}%
@@ -52,7 +52,7 @@ $: if (value >= 25 && value < 50) {
 
 <style lang="css">
     .progress {
-        @apply appearance-none h-2 rounded-full overflow-hidden outline outline-1 outline-offset-1 outline-slate-300;
+        @apply appearance-none w-full h-2 rounded-full overflow-hidden outline outline-1 outline-offset-1 outline-slate-300;
     }
     
     .progress::-webkit-progress-bar {
