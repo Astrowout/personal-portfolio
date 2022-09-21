@@ -1,6 +1,4 @@
 <script lang="ts">
-import "vanilla-tilt";
-
 export let title;
 export let slug;
 export let image;
