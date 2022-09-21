@@ -1,7 +1,7 @@
 <script lang="ts">
 import { spring } from 'svelte/motion';
 import { scale } from "svelte/transition";
-import { page, navigating } from '$app/stores';
+import { page } from '$app/stores';
 
 import { inView } from "$lib/actions";
 import { pageAnim } from '$lib/animations';
@@ -55,7 +55,7 @@ const handleScrollUp = () => {
     class:bg-white={isInView}
 >
     <div class:scale-x-105={isInView} class="transition-transform duration-500">
-        {#key $navigating}
+        {#key data.pathname}
             <div
                 in:scale={{
                     ...pageAnim,

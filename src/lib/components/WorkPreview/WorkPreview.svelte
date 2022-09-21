@@ -1,4 +1,7 @@
 <script lang="ts">
+import { onDestroy, onMount } from "svelte";
+import Tilt from "vanilla-tilt";
+
 export let title;
 export let slug;
 export let image;
@@ -25,6 +28,25 @@ $: switch (cols) {
 	default:
 		break;
 }
+
+let tiltContainer;
+
+onMount(() => {
+	if (tiltContainer) {
+		Tilt.init(tiltContainer, {
+			max: 4,
+			speed: 500,
+			scale: 1.03,
+			"mouse-event-element": "#mouseContainer",
+		});
+	}
+});
+
+onDestroy(() => {
+	if (tiltContainer && tiltContainer.vanillaTilt) {
+		tiltContainer.vanillaTilt.destroy();
+	}
+})
 </script>
 
 <a
@@ -46,10 +68,8 @@ $: switch (cols) {
 			src={image.url}
 			width={image.width}
 			height={image.height}
-			data-tilt
-			data-tilt-max="4"
-			data-tilt-speed="500"
-			data-tilt-scale="1.03"
+			bind:this={tiltContainer}
+			id="tiltContainer"
 			data-tilt-mouse-event-element="#mouseContainer"
 			class="object-contain w-full relative z-10"
 		/>

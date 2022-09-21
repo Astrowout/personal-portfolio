@@ -7,7 +7,7 @@ import MICROCOPY_QUERY from "$lib/queries/microcopy";
 
 export const prerender = true;
  
-export async function load() {
+export async function load({ url: { pathname } }) {
     const { data } = await query(GLOBAL_QUERY);
     const { data: { microcopy } } = await query(MICROCOPY_QUERY);
     
@@ -15,6 +15,7 @@ export async function load() {
         return {
             ...data.global,
             t: microcopy ? microcopy.copy : {},
+            pathname,
         };
     }
  
