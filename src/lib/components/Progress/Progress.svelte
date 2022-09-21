@@ -1,6 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import { cubicOut } from 'svelte/easing';
+import { quintOut } from 'svelte/easing';
 import { tweened } from 'svelte/motion';
 import { page } from '$app/stores';
 
@@ -8,13 +8,13 @@ let className;
 export { className as class };
 export let value = 0;
 
-let ANIM_DURATION = 1400;
-let ANIM_DELAY = 300;
+let ANIM_DURATION = 1600;
+let ANIM_DELAY = 400;
 
 const progress = tweened(0, {
     duration: ANIM_DURATION,
     delay: ANIM_DELAY,
-    easing: cubicOut
+    easing: quintOut,
 });
 
 // TODO: animate on viewport visibility

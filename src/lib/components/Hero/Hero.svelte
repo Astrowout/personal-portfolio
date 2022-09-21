@@ -33,7 +33,7 @@ const visualAnim = {
 };
 </script>
 
-<div class="u-space-x u-space-y-sm w-full">
+<div class="u-space-x py-8 w-full">
     <div class="u-container-sm grid md:grid-cols-2 items-center gap-y-6">
         {#if mounted}
             <div

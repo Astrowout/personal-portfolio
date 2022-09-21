@@ -1,4 +1,9 @@
 <script lang="ts">
+import { fly } from 'svelte/transition';
+
+import { inView } from "$lib/actions";
+import { flyIn } from "$lib/animations";
+
 import PageBody from '../PageBody/PageBody.svelte';
 
 export let title;
@@ -9,6 +14,7 @@ export let id;
 export let __typename;
 
 let colClass = "col-span-6";
+let isInView = false;
 
 $: switch (cols) {
 	case "full":
@@ -29,33 +35,44 @@ $: switch (cols) {
 }
 </script>
 
-<div class="rounded-xl shadow-xl shadow-stone-400/10 border-2 border-slate-200 bg-slate-50 px-5 pt-4 pb-6 md:px-7 md:pt-5 md:pb-9 {colClass}">
-	{#if title}
-		<h4
-			class="text-xl text-slate-400 mb-6 font-medium"
+<div
+	use:inView
+	on:enter={() => isInView = true}
+	class={colClass}
+>
+	{#if isInView}
+		<div
+			in:fly={flyIn}
+			class="rounded-xl shadow-xl shadow-stone-400/10 border-2 border-slate-200 bg-slate-50 px-5 pt-4 pb-6 md:px-7 md:pt-5 md:pb-9"
 		>
-			{ title }
-		</h4>
-	{/if}
+				{#if title}
+					<h4
+						class="text-xl text-slate-400 mb-6 font-medium"
+					>
+						{ title }
+					</h4>
+				{/if}
 
-	{#if images && images.length}
-		<div class="flex flex-wrap items-start -mx-4 -my-2">
-			{#each images as image (image.url)}
-				<img
-					alt={image.alt}
-					title={image.alt}
-					src={image.url}
-					width={image.width}
-					height={image.height}
-					class="object-contain w-auto h-8 mx-4 my-2"
-				/>
-			{/each}
-		</div>
-	{/if}
+				{#if images && images.length}
+					<div class="flex flex-wrap items-start -mx-4 -my-2">
+						{#each images as image (image.url)}
+							<img
+								alt={image.alt}
+								title={image.alt}
+								src={image.url}
+								width={image.width}
+								height={image.height}
+								class="object-contain w-auto h-8 mx-4 my-2"
+							/>
+						{/each}
+					</div>
+				{/if}
 
-	{#if body && body.length}
-		<div class="flex flex-col gap-y-4">
-			<PageBody body={body} />
+				{#if body && body.length}
+					<div class="flex flex-col gap-y-8">
+						<PageBody body={body} />
+					</div>
+				{/if}
 		</div>
 	{/if}
 </div>

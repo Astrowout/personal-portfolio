@@ -2,4 +2,8 @@
     :root {
         @apply bg-stone-100 font-serif overflow-x-hidden pointer-events-none;
     }
+
+    body > div {
+        @apply flex flex-col min-h-screen;
+    }
 }

@@ -1,7 +1,8 @@
 <script lang="ts">
-import { onMount } from 'svelte';
 import { fly } from 'svelte/transition';
-import { expoOut } from 'svelte/easing';
+
+import { inView } from "$lib/actions";
+import { flyIn } from "$lib/animations";
 
 import Link from '../Link/Link.svelte';
 
@@ -10,38 +11,38 @@ export let links = [];
 export let id;
 export let __typename;
 
-let mounted = false;
-let ANIM_DURATION = 1400;
-let ANIM_DELAY = 600;
-
-// TODO: animate on viewport visibility
-onMount(() => {
-    mounted = true;
-});
-
-const lineAnim = {
-    delay: ANIM_DELAY,
-    duration: ANIM_DURATION,
-    easing: expoOut,
-};
+let isInView = false;
+const ANIM_DELAY = 200;
 </script>
 
-<div class="flex flex-col gap-y-4">
-    {#if title && mounted}
+<div
+    use:inView
+    on:enter={() => isInView = true}
+    class="flex flex-col gap-y-4"
+>
+    {#if title && isInView}
         <h4
             class="text-xl text-slate-400"
-            in:fly={lineAnim}
+            in:fly={{
+                ...flyIn,
+                delay: ANIM_DELAY,
+            }}
         >
             { title }
         </h4>
     {/if}
     
-    {#if links && !!links.length}
+    {#if links && !!links.length && isInView}
         <ul
             class="flex flex-col gap-y-2"
         >
-            {#each links as link (link.url)}
-                <li>
+            {#each links as link, index (link.url)}
+                <li
+                    in:fly={{
+                        ...flyIn,
+                        delay: ANIM_DELAY + (index * 100),
+                    }}
+                >
                     <Link {...link} />
                 </li>
             {/each}

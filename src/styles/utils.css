@@ -30,8 +30,4 @@
     .u-space-y {
         @apply py-16 md:py-24;
     }
-
-    .u-space-y-sm {
-        @apply py-8;
-    }
 }

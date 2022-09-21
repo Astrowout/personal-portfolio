@@ -14,7 +14,7 @@ export let __typename;
 
 <svelte:element
     this={asPage ? 'section' : 'footer'}
-    class="u-space-x pointer-events-auto overflow-hidden {asPage ? 'u-space-y-sm' : 'pt-24 md:pt-36 pb-36 footer:sticky bottom-0 w-full -z-10'}"
+    class="u-space-x pointer-events-auto overflow-hidden pb-36 {asPage ? 'pt-8' : 'pt-24 md:pt-36 footer:sticky bottom-0 w-full -z-10'}"
 >
     <div class="u-container-sm flex flex-col items-center">
         {#if heading}

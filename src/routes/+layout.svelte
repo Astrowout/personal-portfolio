@@ -1,20 +1,20 @@
 <script lang="ts">
 import { spring } from 'svelte/motion';
-import { page } from '$app/stores';
+import { scale } from "svelte/transition";
+import { page, navigating } from '$app/stores';
 
-import inView from "$lib/helpers/in-viewport";
-
-import "../styles/app.css";
-
+import { inView } from "$lib/actions";
+import { pageAnim } from '$lib/animations';
 import Header from '$lib/components/Header/Header.svelte';
 import Footer from '$lib/components/Footer/Footer.svelte';
 import Navigation from '$lib/components/Navigation/Navigation.svelte';
 
+import "../styles/app.css";
+
 export let data;
 
 $: isContactPage = $page.routeId === "contact";
-
-let scrollEnd = false;
+let isInView = false;
 
 let coords = spring({ x: 0, y: 0 }, {
     stiffness: 0.1,
@@ -29,10 +29,10 @@ const updateCoords = (e) => {
 }
 
 const handleBottom = () => {
-    scrollEnd = true;
+    isInView = true;
 }
 const handleScrollUp = () => {
-    scrollEnd = false;
+    isInView = false;
 }
 </script>
 
@@ -50,12 +50,24 @@ const handleScrollUp = () => {
 <Header cta={data.mainCta} />
 
 <main
-    class="bg-stone-100 shadow-xl relative overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-[40px] min-h-screen"
-    class:scale-x-95={scrollEnd}
-    class:bg-white={scrollEnd}
+    class="bg-stone-100 shadow-xl flex-grow relative overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-[40px]"
+    class:scale-x-95={isInView}
+    class:bg-white={isInView}
 >
-    <div class:scale-x-105={scrollEnd} class="transition-transform duration-500">
-        <slot></slot>
+    <div class:scale-x-105={isInView} class="transition-transform duration-500">
+        {#key $navigating}
+            <div
+                in:scale={{
+                    ...pageAnim,
+                    delay: pageAnim.duration,
+                }}
+                out:scale={{
+                      ...pageAnim,
+                }}
+            >
+                <slot />
+            </div>
+        {/key}
     
         <img
             src="/globe.svg"
