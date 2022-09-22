@@ -19,7 +19,7 @@ const handleLeave = ({ detail }) => {
 </script>
 
 <div
-    use:inview={{ rootMargin: "-120px", threshold: 0.2 }}
+    use:inview={{ rootMargin: "0px 0px -180px 0px", threshold: 0.2 }}
     on:enter={handleEnter}
     on:leave={handleLeave}
     class="mb-12 md:mb-16 flex flex-col text-center items-center"

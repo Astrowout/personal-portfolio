@@ -1,10 +1,10 @@
 import { expoOut } from "svelte/easing";
 
-const ANIM_DURATION = 300;
+const ANIM_DURATION = 400;
 
 export default {
     duration: ANIM_DURATION,
     easing: expoOut,
-    start: 0.95,
+    y: 20,
     opacity: 0,
 };

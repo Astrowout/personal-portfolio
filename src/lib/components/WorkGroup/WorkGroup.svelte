@@ -40,7 +40,7 @@ const handleLeave = ({ detail }) => {
 </script>
 
 <div
-	use:inview={{ rootMargin: "-120px", threshold: 0.2 }}
+	use:inview={{ rootMargin: "0px 0px -180px 0px", threshold: 0.2 }}
 	on:enter={handleEnter}
 	on:leave={handleLeave}
 	class="w-full grid grid-cols-6 gap-6 lg:gap-8 items-start"
@@ -49,7 +49,7 @@ const handleLeave = ({ detail }) => {
 		<div
 			class="u-anim-start {getColClass(item.cols)}"
 			class:u-anim-end={isInView}
-			style="transition-delay: {isInView ? index * 50 : 0}ms;"
+			style="transition-delay: {isInView ? index * 120 : 0}ms;"
 		>
 			<WorkPreview {...item} />
 		</div>

@@ -1,7 +1,7 @@
 <script lang="ts">
 import { inview } from 'svelte-inview';
 import { spring } from 'svelte/motion';
-import { scale } from "svelte/transition";
+import { fly } from "svelte/transition";
 import { page } from '$app/stores';
 
 import { pageAnim } from '$lib/animations';
@@ -54,11 +54,11 @@ const handleInview = ({ detail }) => {
     <div class:scale-x-105={isInView} class="transition-transform duration-500">
         {#key data.pathname}
             <div
-                in:scale={{
+                in:fly={{
                     ...pageAnim,
                     delay: pageAnim.duration,
                 }}
-                out:scale={{
+                out:fly={{
                       ...pageAnim,
                 }}
             >
@@ -78,7 +78,7 @@ const handleInview = ({ detail }) => {
     <Footer {...data.footer} />
 
     <div
-        use:inview={{ rootMargin: '40px' }}
+        use:inview={{ rootMargin: '0px 0px 40px 0px' }}
         on:change={handleInview}
     />
 {/if}

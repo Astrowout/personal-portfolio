@@ -23,7 +23,7 @@ const handleLeave = ({ detail }) => {
 
 <div
     class="flex flex-col gap-y-4"
-    use:inview={{ rootMargin: "-120px", threshold: 0.2 }}
+    use:inview={{ rootMargin: "0px 0px -120px 0px", threshold: 0.2 }}
 	on:enter={handleEnter}
 	on:leave={handleLeave}
 >

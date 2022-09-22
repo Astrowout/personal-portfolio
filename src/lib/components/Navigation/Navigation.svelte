@@ -1,8 +1,26 @@
 <script lang="ts">
 import { onMount } from 'svelte';
+import { crossfade } from 'svelte/transition';
+import { quintOut } from 'svelte/easing';
 import { page } from '$app/stores';
 
 export let items = [];
+
+const [send, receive] = crossfade({
+    fallback(node, params) {
+        const style = getComputedStyle(node);
+        const transform = style.transform === 'none' ? '' : style.transform;
+
+        return {
+            duration: 600,
+            easing: quintOut,
+            css: t => `
+                transform: ${transform} scale(${t});
+                opacity: ${t}
+            `
+        };
+    }
+});
 
 let mounted = false;
 
@@ -28,7 +46,11 @@ onMount(() => {
                         </span>
 
                         {#if ($page.routeId === item.slug) || (!$page.routeId && !item.slug)}
-                            <span class="z-10 absolute left-1/2 -translate-x-1/2 bottom-4 w-1 h-1 rounded-full bg-white"></span>
+                            <span
+                                class="z-10 absolute left-1/2 -translate-x-1/2 bottom-4 w-1 h-1 rounded-full bg-white transition"
+                                in:receive="{{key: item.slug}}"
+				                out:send="{{key: item.slug}}"
+                            ></span>
                         {/if}
                     </a>
                 </li>

@@ -10,6 +10,7 @@ export let id;
 export let __typename;
 
 let tiltContainer;
+let mouseContainer;
 
 onMount(() => {
 	if (tiltContainer) {
@@ -17,7 +18,7 @@ onMount(() => {
 			max: 4,
 			speed: 500,
 			scale: 1.03,
-			"mouse-event-element": "#mouseContainer",
+			"mouse-event-element": mouseContainer,
 		});
 	}
 });
@@ -32,7 +33,7 @@ onDestroy(() => {
 <a
 	href="/work/{slug}"
 	class="group flex flex-col items-center"
-	id="mouseContainer"
+	bind:this={mouseContainer}
 >
 	{#if title}
 		<h4
