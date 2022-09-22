@@ -1,37 +1,43 @@
 <script lang="ts">
-import { fly } from 'svelte/transition';
-
-import { inView } from "$lib/actions";
-import { flyIn } from "$lib/animations";
+import { inview } from 'svelte-inview';
 
 export let subtitle = "";
 export let title = "";
 export let __typename;
 
 let isInView = false;
+
+const handleEnter = () => {
+	isInView = true;
+}
+
+const handleLeave = ({ detail }) => {
+	if (detail.scrollDirection.vertical === "down") {
+		isInView = false;
+	}
+}
 </script>
 
 <div
-    use:inView
-    on:enter={() => isInView = true}
+    use:inview={{ rootMargin: "-120px", threshold: 0.2 }}
+    on:enter={handleEnter}
+    on:leave={handleLeave}
     class="mb-12 md:mb-16 flex flex-col text-center items-center"
 >
-    {#if title && isInView}
+    {#if title}
         <h2
-            class="u-font-display uppercase text-3xl sm:text-4xl text-slate-900"
-            in:fly={{
-                ...flyIn,
-                delay: 100,
-            }}
+            class="u-font-display uppercase text-3xl sm:text-4xl text-slate-900 u-anim-start"
+            class:delay-100={isInView}
+            class:u-anim-end={isInView}
         >
             { title }
         </h2>
     {/if}
     
-    {#if subtitle && isInView}
+    {#if subtitle}
         <h3
-            class="order-first font-serif uppercase text-3xl sm:text-4xl text-slate-400"
-            in:fly={flyIn}
+            class="order-first font-serif uppercase text-3xl sm:text-4xl text-slate-400 u-anim-start"
+            class:u-anim-end={isInView}
         >
             { subtitle }
         </h3>

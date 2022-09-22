@@ -30,4 +30,12 @@
     .u-space-y {
         @apply py-16 md:py-24;
     }
+
+    .u-anim-start {
+        @apply transition duration-500 ease-out opacity-0 translate-y-8;
+    }
+
+    .u-anim-end {
+        @apply opacity-100 translate-y-0;
+    }
 }

@@ -1,7 +1,5 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import { scale } from 'svelte/transition';
-import { backOut } from 'svelte/easing';
 
 import Logo from '../Logo/Logo.svelte';
 import Button from '../Button/Button.svelte';
@@ -9,40 +7,32 @@ import Button from '../Button/Button.svelte';
 export let cta;
 
 let mounted = false;
-let ANIM_DURATION = 600;
-let ANIM_DELAY = 400;
 
 onMount(() => {
     mounted = true;
 });
-
-const scaleAnim = {
-    delay: ANIM_DELAY,
-    duration: ANIM_DURATION,
-    easing: backOut,
-};
 </script>
 
 <header class="u-space-x py-5 md:py-8 w-full bg-stone-100 relative z-10 pointer-events-auto">
     <div class="u-container flex justify-between">
-        {#if mounted}
-            <span in:scale={scaleAnim}>
-                <Logo />
+        <span
+            class="transition duration-700 ease-out delay-200"
+            class:scale-0={!mounted}
+            class:scale-100={mounted}
+        >
+            <Logo />
+        </span>
+        
+        {#if cta}
+            <span
+                class:scale-0={!mounted}
+                class:scale-100={mounted}
+                class="flex transition duration-700 ease-out delay-300"
+            >
+                <Button href={cta.slug}>
+                    { cta.label }
+                </Button>
             </span>
-            
-            {#if cta}
-                <span
-                    in:scale={{
-                        ...scaleAnim,
-                        delay: scaleAnim.delay + 200,
-                    }}
-                    class="flex"
-                >
-                    <Button href={cta.slug}>
-                        { cta.label }
-                    </Button>
-                </span>
-            {/if}
         {/if}
     </div>
 </header>

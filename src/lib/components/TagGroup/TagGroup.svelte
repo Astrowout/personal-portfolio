@@ -1,9 +1,6 @@
 
 <script lang="ts">
-import { fly } from 'svelte/transition';
-
-import { inView } from "$lib/actions";
-import { flyIn } from "$lib/animations";
+import { inview } from 'svelte-inview';
 
 import Tag from "../Tag/Tag.svelte";
 
@@ -12,27 +9,33 @@ export let id;
 export let __typename;
 
 let isInView = false;
+
+const handleEnter = () => {
+	isInView = true;
+}
+
+const handleLeave = ({ detail }) => {
+	if (detail.scrollDirection.vertical === "down") {
+		isInView = false;
+	}
+}
 </script>
 
-<div
-    use:inView
-    on:enter={() => isInView = true}
+<ul
+    use:inview={{ rootMargin: "-120px", threshold: 0.2 }}
+    on:enter={handleEnter}
+    on:leave={handleLeave}
+    class="flex w-full justify-center flex-wrap -m-1.5 lg:-m-2"
 >
-    {#if isInView}
-        <ul class="flex w-full justify-center flex-wrap -m-1.5 lg:-m-2">
-            {#each tags as tag, index (tag.id)}
-                <li
-                    in:fly={{
-                        ...flyIn,
-                        delay: index * 50,
-                    }}
-                    class="inline-flex m-1.5 lg:m-2"
-                >
-                    <Tag>
-                        { tag.label }
-                    </Tag>
-                </li>
-            {/each}
-        </ul>
-    {/if}
-</div>
+    {#each tags as tag, index (tag.id)}
+        <li
+            class="inline-flex m-1.5 lg:m-2 u-anim-start"
+            class:u-anim-end={isInView}
+            style="transition-delay: {isInView ? index * 50 : 0}ms;"
+        >
+            <Tag>
+                { tag.label }
+            </Tag>
+        </li>
+    {/each}
+</ul>

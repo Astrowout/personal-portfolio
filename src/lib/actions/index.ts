@@ -1,1 +1,0 @@
-export { default as inView } from "./inView";

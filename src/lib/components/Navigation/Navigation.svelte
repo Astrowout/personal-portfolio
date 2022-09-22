@@ -1,10 +1,24 @@
 <script lang="ts">
+import { onMount } from 'svelte';
 import { page } from '$app/stores';
+
 export let items = [];
+
+let mounted = false;
+
+onMount(() => {
+    mounted = true;
+});
 </script>
 
 <div class="fixed w-full z-50 inset-x-0 bottom-6 sm:bottom-8 pointer-events-none flex justify-center">
-    <nav class="bg-slate-900/90 rounded-xl backdrop-blur-sm shadow-md pointer-events-auto">
+    <nav
+        class="bg-slate-900/90 rounded-xl backdrop-blur-sm shadow-md pointer-events-auto transition ease-out delay-1000 duration-300"
+        class:opacity-0={!mounted}
+        class:translate-y-12={!mounted}
+        class:opacity-100={mounted}
+        class:translate-y-0={mounted}
+    >
         <ul class="flex text-white -mx-3 u-font-display sm:text-lg px-7">
             {#each items as item (item.id)}
                 <li>

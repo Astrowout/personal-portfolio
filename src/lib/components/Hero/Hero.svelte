@@ -1,57 +1,53 @@
 <script lang="ts">
 import { onMount } from 'svelte';
-import { fly, blur } from 'svelte/transition';
-import { expoOut } from 'svelte/easing';
 
 export let headline;
 export let image;
 export let id;
 export let __typename;
 
+let loaded = false;
 let mounted = false;
-let ANIM_DURATION = 1400;
-let ANIM_DELAY = 600;
+
+const preloadImage = () => {
+    const img = new Image();
+    img.src = image.url;
+    img.onload = () => {
+        loaded = true;
+    };
+}
 
 onMount(() => {
     mounted = true;
+
+    preloadImage();
 });
-
-const headlineAnim = {
-    delay: ANIM_DELAY,
-    duration: ANIM_DURATION,
-    y: 40,
-    opacity: 0,
-    easing: expoOut,
-};
-
-const visualAnim = {
-    delay: ANIM_DELAY + 200,
-    duration: ANIM_DURATION,
-    x: -80,
-    opacity: 1,
-    easing: expoOut,
-};
 </script>
 
 <div class="u-space-x py-8 w-full">
     <div class="u-container-sm grid md:grid-cols-2 items-center gap-y-6">
-        {#if mounted}
-            <div
-                class="u-prose u-max-w-prose"
-                in:fly={headlineAnim}
-            >
-                {@html headline.html}
-            </div>
-        {/if}
+        <div
+            class="u-prose u-max-w-prose transition duration-1000 ease-out delay-500"
+            class:opacity-0={!mounted}
+            class:translate-y-12={!mounted}
+            class:opacity-100={mounted}
+            class:translate-x-0={mounted}
+        >
+            {@html headline.html}
+        </div>
 
-        {#if image && mounted}
+        {#if image}
             <div
-                class="drop-shadow-xl"
-                in:fly={visualAnim}
-                >
+                class="drop-shadow-xl transition duration-1000 ease-out delay-700"
+                class:opacity-0={!loaded}
+                class:blur-lg={!loaded}
+                class:-translate-x-12={!loaded}
+                class:opacity-100={loaded}
+                class:translate-x-0={loaded}
+                class:blur-none={loaded}
+            >
                 <div    
                     style="clip-path: url(#svgPath); -webkit-clip-path: url(#svgPath);" class="max-w-[240px] md:max-w-full -translate-x-1/4 md:translate-x-0 -z-10 overflow-hidden"
-                    in:blur={{ delay: ANIM_DELAY + 200, duration: ANIM_DURATION, amount: 20 }}
                 >
                     <img
                         alt={image.alt}
@@ -61,6 +57,7 @@ const visualAnim = {
                         height={image.height}
                         class="object-cover translate-x-[12%] -translate-y-px"
                     />
+
                     <svg width="0" height="0">
                         <defs>
                             <clipPath id="svgPath" clipPathUnits="objectBoundingBox">

@@ -1,9 +1,9 @@
 <script lang="ts">
+import { inview } from 'svelte-inview';
 import { spring } from 'svelte/motion';
 import { scale } from "svelte/transition";
 import { page } from '$app/stores';
 
-import { inView } from "$lib/actions";
 import { pageAnim } from '$lib/animations';
 import Header from '$lib/components/Header/Header.svelte';
 import Footer from '$lib/components/Footer/Footer.svelte';
@@ -28,11 +28,8 @@ const updateCoords = (e) => {
     }
 }
 
-const handleBottom = () => {
-    isInView = true;
-}
-const handleScrollUp = () => {
-    isInView = false;
+const handleInview = ({ detail }) => {
+    isInView = detail.inView;
 }
 </script>
 
@@ -81,9 +78,8 @@ const handleScrollUp = () => {
     <Footer {...data.footer} />
 
     <div
-        use:inView={{ bottom: -40 }}
-        on:enter={handleBottom}
-        on:exit={handleScrollUp}
+        use:inview={{ rootMargin: '40px' }}
+        on:change={handleInview}
     />
 {/if}
 

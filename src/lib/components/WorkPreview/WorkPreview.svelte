@@ -9,26 +9,6 @@ export let cols;
 export let id;
 export let __typename;
 
-let colClass = "col-span-6";
-
-$: switch (cols) {
-	case "full":
-		colClass = "col-span-6";
-		break;
-	case "half":
-		colClass = "col-span-6 md:col-span-3";
-		break;
-	case "third":
-		colClass = "col-span-6 md:col-span-3 lg:col-span-2";
-		break;
-	case "two_thirds":
-		colClass = "col-span-6 lg:col-span-4";
-		break;
-
-	default:
-		break;
-}
-
 let tiltContainer;
 
 onMount(() => {
@@ -51,7 +31,7 @@ onDestroy(() => {
 
 <a
 	href="/work/{slug}"
-	class="group flex flex-col items-center {colClass}"
+	class="group flex flex-col items-center"
 	id="mouseContainer"
 >
 	{#if title}
