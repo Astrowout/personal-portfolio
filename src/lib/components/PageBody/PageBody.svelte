@@ -8,6 +8,7 @@ import Card from '../Card/Card.svelte';
 import Text from '../Text/Text.svelte';
 import Expertise from '../Expertise/Expertise.svelte';
 import WorkGroup from '../WorkGroup/WorkGroup.svelte';
+import Song from '../Song/Song.svelte';
 
 const components = {
     "Hero": Hero,
@@ -19,6 +20,7 @@ const components = {
     "Text": Text,
     "Expertise": Expertise,
     "WorkGroup": WorkGroup,
+    "Song": Song,
 };
 
 export let body;

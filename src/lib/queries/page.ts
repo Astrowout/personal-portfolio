@@ -46,8 +46,9 @@ export default gql`
 
     fragment textFields on Text {
         id
-        body {
-           html
+        locale
+        content {
+            html
         }
     }
 
@@ -74,6 +75,7 @@ export default gql`
             height
         }
         body {
+            ...textFields
             ...expertiseFields
             ...songFields
         }
@@ -92,6 +94,7 @@ export default gql`
 
     fragment sectionFields on Section {
         id
+        compact
         heading {
             subtitle
             title

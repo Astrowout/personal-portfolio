@@ -47,7 +47,7 @@ const handleInview = ({ detail }) => {
 <Header cta={data.mainCta} />
 
 <main
-    class="bg-stone-100 shadow-xl flex-grow relative overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-[40px]"
+    class="flex-grow relative bg-stone-100 shadow-xl overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-[40px]"
     class:scale-x-95={isInView}
     class:bg-white={isInView}
 >
@@ -69,7 +69,7 @@ const handleInview = ({ detail }) => {
         <img
             src="/globe.svg"
             alt="globe background"
-            class="absolute bottom-0 w-full rotate-12 -translate-x-1/3 -z-10 pointer-events-none"
+            class="absolute left-0 bottom-0 w-full rotate-12 -translate-x-1/3 -z-10 pointer-events-none"
         />
     </div>
 </main>

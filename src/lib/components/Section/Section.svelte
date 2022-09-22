@@ -2,13 +2,14 @@
 import Heading from '../Heading/Heading.svelte';
 import PageBody from '../PageBody/PageBody.svelte';
 
+export let compact = false;
 export let heading;
 export let body;
 export let id;
 export let __typename;
 </script>
 
-<section class="u-space-x u-space-y w-full">
+<section class="w-full u-space-x {compact ? 'u-space-y-sm' : 'u-space-y'}">
     <div class="u-container-sm flex flex-col">
         {#if heading}
             <Heading {...heading} />

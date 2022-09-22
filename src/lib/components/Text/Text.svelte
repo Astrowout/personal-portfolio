@@ -1,9 +1,9 @@
 <script lang="ts">
-export let body;
+export let content;
 export let id;
 export let __typename;
 </script>
 
-<div class="u-prose u-max-w-prose">
-    {@html body.html}
+<div class="prose prose-slate u-max-w-prose">
+    {@html content.html}
 </div>

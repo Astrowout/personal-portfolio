@@ -8,4 +8,8 @@
     <title>Hi 👋 | Wout Vandesompele</title>
 </svelte:head>
 
+<h1 class="sr-only">
+    About me
+</h1>
+
 <PageBody body={data.body} />

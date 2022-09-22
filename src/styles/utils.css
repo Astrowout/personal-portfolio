@@ -31,6 +31,10 @@
         @apply py-16 md:py-24;
     }
 
+    .u-space-y-sm {
+        @apply pt-8 pb-16 md:pb-24;
+    }
+
     .u-anim-start {
         @apply transition duration-500 ease-out opacity-0 translate-y-8;
     }
