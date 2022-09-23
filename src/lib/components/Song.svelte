@@ -1,5 +1,7 @@
 <script lang="ts">
 export let spotifySongId = "";
+export let id;
+export let __typename;
 </script>
 
 <iframe

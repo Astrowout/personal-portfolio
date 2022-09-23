@@ -29,7 +29,7 @@ onMount(() => {
                 class:scale-100={mounted}
                 class="flex transition duration-700 ease-out delay-300"
             >
-                <Button href={cta.slug}>
+                <Button href={cta.url}>
                     { cta.label }
                 </Button>
             </span>

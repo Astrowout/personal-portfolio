@@ -1,6 +1,5 @@
 import { gql } from '@apollo/client/core/core.cjs';
 
-
 export default gql`
     fragment workGroupFields on WorkGroup {
         id
@@ -66,7 +65,15 @@ export default gql`
             title
             role
             time
-            url
+            link {
+                label
+                url
+                external
+            }
+            cta {
+                label
+                url
+            }
         }
     }
 

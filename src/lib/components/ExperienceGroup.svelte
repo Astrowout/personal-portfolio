@@ -6,6 +6,9 @@ export let id;
 export let __typename;
 </script>
 
-{#each experiences as item (item.id)}
-	<Experience {...item} />
+{#each experiences as item, index (item.id)}
+	<Experience
+		{...item}
+		isLast={index === experiences.length - 1}
+	/>
 {/each}

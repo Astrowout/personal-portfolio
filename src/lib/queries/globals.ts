@@ -15,7 +15,7 @@ export default gql`
             mainCta {
                 id
                 label
-                slug
+                url
             }
             footer {
                 heading {

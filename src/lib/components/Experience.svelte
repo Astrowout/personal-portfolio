@@ -1,44 +1,46 @@
 <script lang="ts">
-import { page } from '$app/stores';
-
+import Link from './Link.svelte';
 import Button from './Button.svelte';
 
 export let title;
 export let role;
 export let time;
-export let url;
+export let link;
 export let cta;
+export let isLast = false;
+export let id;
+export let __typename;
 
 let className = "";
 export { className as class };
 </script>
 
-<div class="flex flex-col {className}">
-    <p class="u-font-display text-xl text-slate-900">
+<div
+    class="flex flex-col items-start pb-4 border-b border-b-slate-200 {className}"
+    class:border-none={isLast}
+    class:pb-0={isLast}
+>
+    <p class="u-font-display text-lg md:text-xl text-slate-900">
         {title}
     </p>
 
-    {#if role}
-        <p class="lg:text-lg prose prose-slate font-medium">
-            {$page.data.t['generic.role']} {role}
-        </p>
-    {/if}
-
-    {#if url}
-        <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline"
-        >
-            {url}
-        </a>
-    {/if}
-
     {#if time}
-        <p class="lg:text-lg prose prose-slate">
+        <p class="mt-1 u-font-display text-slate-500">
             {time}
         </p>
+    {/if}
+
+    {#if role}
+        <p class="text-lg text-slate-600">
+            {role}
+        </p>
+    {/if}
+
+    {#if link}
+        <Link
+            {...link}
+            class="mt-3 text-slate-500"
+        />
     {/if}
 
     {#if cta}
@@ -46,7 +48,7 @@ export { className as class };
             href={cta.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="lg:text-lg prose prose-slate"
+            class="mt-3"
         >
             {cta.label}
         </Button>

@@ -1,6 +1,8 @@
 <script lang="ts">
 export let number;
 export let description;
+export let id;
+export let __typename;
 
 let className = "";
 export { className as class };
