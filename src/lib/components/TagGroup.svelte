@@ -2,7 +2,7 @@
 <script lang="ts">
 import { inview } from 'svelte-inview';
 
-import Tag from "../Tag/Tag.svelte";
+import Tag from "./Tag.svelte";
 
 export let tags;
 export let id;

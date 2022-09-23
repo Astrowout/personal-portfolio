@@ -1,14 +1,16 @@
 <script lang="ts">
-import Hero from '../Hero/Hero.svelte';
-import Section from '../Section/Section.svelte';
-import TagGroup from '../TagGroup/TagGroup.svelte';
-import Divider from '../Divider/Divider.svelte';
-import Grid from '../Grid/Grid.svelte';
-import Card from '../Card/Card.svelte';
-import Text from '../Text/Text.svelte';
-import Expertise from '../Expertise/Expertise.svelte';
-import WorkGroup from '../WorkGroup/WorkGroup.svelte';
-import Song from '../Song/Song.svelte';
+import Hero from './Hero.svelte';
+import Section from './Section.svelte';
+import TagGroup from './TagGroup.svelte';
+import Divider from './Divider.svelte';
+import Grid from './Grid.svelte';
+import Card from './Card.svelte';
+import Text from './Text.svelte';
+import Expertise from './Expertise.svelte';
+import WorkGroup from './WorkGroup.svelte';
+import Song from './Song.svelte';
+import Stat from './Stat.svelte';
+import Experience from './Experience.svelte';
 
 const components = {
     "Hero": Hero,
@@ -21,6 +23,8 @@ const components = {
     "Expertise": Expertise,
     "WorkGroup": WorkGroup,
     "Song": Song,
+    "Stat": Stat,
+    "Experience": Experience,
 };
 
 export let body;

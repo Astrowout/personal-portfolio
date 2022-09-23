@@ -1,7 +1,7 @@
 <script lang="ts">
-import Heading from '../Heading/Heading.svelte';
-import LogoLine from '../LogoLine/LogoLine.svelte';
-import LinkGroup from '../LinkGroup/LinkGroup.svelte';
+import Heading from './Heading.svelte';
+import LogoLine from './LogoLine.svelte';
+import LinkGroup from './LinkGroup.svelte';
 
 const year = new Date().getFullYear();
 
@@ -14,7 +14,7 @@ export let __typename;
 
 <svelte:element
     this={asPage ? 'section' : 'footer'}
-    class="u-space-x pointer-events-auto overflow-hidden pb-36 {asPage ? 'pt-8' : 'pt-24 md:pt-36 footer:sticky bottom-0 w-full -z-10'}"
+    class="u-space-x pointer-events-auto overflow-hidden pb-36 {asPage ? 'pt-8' : 'pt-20 footer:sticky bottom-0 w-full -z-10'}"
 >
     <div class="u-container-sm flex flex-col items-center">
         {#if heading}

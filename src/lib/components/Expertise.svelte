@@ -1,5 +1,5 @@
 <script lang="ts">
-import Progress from '../Progress/Progress.svelte';
+import Progress from './Progress.svelte';
 
 export let title;
 export let image;

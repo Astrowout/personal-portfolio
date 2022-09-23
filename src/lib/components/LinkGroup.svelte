@@ -1,7 +1,7 @@
 <script lang="ts">
 import { inview } from 'svelte-inview';
 
-import Link from '../Link/Link.svelte';
+import Link from './Link.svelte';
 
 export let title = "";
 export let links = [];
@@ -29,7 +29,7 @@ const handleLeave = ({ detail }) => {
 >
     {#if title}
         <h4
-            class="text-xl text-slate-400 u-anim-start"
+            class="text-xl md:text-2xl text-slate-400 u-anim-start"
 			class:u-anim-end={isInView}
         >
             { title }

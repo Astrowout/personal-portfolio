@@ -1,8 +1,8 @@
 <script lang="ts">
 import { onMount } from 'svelte';
 
-import Logo from '../Logo/Logo.svelte';
-import Button from '../Button/Button.svelte';
+import Logo from './Logo.svelte';
+import Button from './Button.svelte';
 
 export let cta;
 

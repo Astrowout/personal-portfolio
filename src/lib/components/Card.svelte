@@ -1,7 +1,7 @@
 <script lang="ts">
 import { inview } from 'svelte-inview';
 
-import PageBody from '../PageBody/PageBody.svelte';
+import PageBody from './PageBody.svelte';
 
 export let title;
 export let body;
@@ -47,11 +47,11 @@ const handleLeave = ({ detail }) => {
 	on:enter={handleEnter}
 	on:leave={handleLeave}
 	class:u-anim-end={isInView}
-	class="u-anim-start rounded-xl shadow-xl shadow-stone-400/10 border-2 border-slate-200 bg-slate-50 px-5 pt-4 pb-6 md:px-7 md:pt-5 md:pb-9 {colClass}"
+	class="u-anim-start relative overflow-hidden rounded-xl shadow-xl shadow-stone-400/10 border-2 border-slate-200 bg-slate-50 px-5 pt-4 pb-6 md:px-7 md:pt-5 md:pb-10 {colClass}"
 >
 		{#if title}
 			<h4
-				class="text-xl text-slate-400 mb-6 font-medium"
+				class="text-xl md:text-2xl text-slate-400 mb-6 font-medium"
 			>
 				{ title }
 			</h4>

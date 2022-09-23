@@ -1,7 +1,7 @@
 <script lang="ts">
 import { inview } from 'svelte-inview';
 
-import WorkPreview from '../WorkPreview/WorkPreview.svelte';
+import WorkPreview from './WorkPreview.svelte';
 
 export let works;
 export let id;

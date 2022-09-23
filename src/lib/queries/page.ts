@@ -44,9 +44,16 @@ export default gql`
         spotifySongId
     }
 
+    fragment statFields on Stat {
+        id
+        number
+        description {
+            html
+        }
+    }
+
     fragment textFields on Text {
         id
-        locale
         content {
             html
         }
@@ -78,6 +85,7 @@ export default gql`
             ...textFields
             ...expertiseFields
             ...songFields
+            ...statFields
         }
     }
 

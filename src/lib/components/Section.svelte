@@ -1,6 +1,6 @@
 <script lang="ts">
-import Heading from '../Heading/Heading.svelte';
-import PageBody from '../PageBody/PageBody.svelte';
+import Heading from './Heading.svelte';
+import PageBody from './PageBody.svelte';
 
 export let compact = false;
 export let heading;

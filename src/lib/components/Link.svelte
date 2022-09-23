@@ -27,7 +27,7 @@ const lineAnim = {
 {#if mounted}
     <a
         href={url}
-        class="flex items-center gap-x-1.5 flex-wrap group hover:underline text-slate-900"
+        class="flex items-center gap-x-1.5 text-lg flex-wrap group hover:underline text-slate-900"
         in:fly={lineAnim}
         rel="noopener noreferrer"
         target={external ? "_blank" : "self"}

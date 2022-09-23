@@ -1,5 +1,5 @@
 <script lang="ts">
-import Footer from "$lib/components/Footer/Footer.svelte";
+import Footer from "$lib/components/Footer.svelte";
 
 export let data;
 </script>

@@ -5,9 +5,9 @@ import { fly } from "svelte/transition";
 import { page } from '$app/stores';
 
 import { pageAnim } from '$lib/animations';
-import Header from '$lib/components/Header/Header.svelte';
-import Footer from '$lib/components/Footer/Footer.svelte';
-import Navigation from '$lib/components/Navigation/Navigation.svelte';
+import Header from '$lib/components/Header.svelte';
+import Footer from '$lib/components/Footer.svelte';
+import Navigation from '$lib/components/Navigation.svelte';
 
 import "../styles/app.css";
 
@@ -48,39 +48,37 @@ const handleInview = ({ detail }) => {
 
 <main
     class="flex-grow relative bg-stone-100 shadow-xl overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-[40px]"
-    class:scale-x-95={isInView}
-    class:bg-white={isInView}
+    class:scale-[96%]={isInView}
 >
-    <div class:scale-x-105={isInView} class="transition-transform duration-500">
-        {#key data.pathname}
-            <div
-                in:fly={{
+    {#key data.pathname}
+        <div
+            in:fly={{
+                ...pageAnim,
+                delay: pageAnim.duration,
+            }}
+            out:fly={{
                     ...pageAnim,
-                    delay: pageAnim.duration,
-                }}
-                out:fly={{
-                      ...pageAnim,
-                }}
-            >
-                <slot />
-            </div>
-        {/key}
-    
-        <img
-            src="/globe.svg"
-            alt="globe background"
-            class="absolute left-0 bottom-0 w-full rotate-12 -translate-x-1/3 -z-10 pointer-events-none"
-        />
-    </div>
+            }}
+        >
+            <slot />
+        </div>
+    {/key}
+
+    <img
+        src="/globe.svg"
+        alt="globe background"
+        class="absolute left-0 bottom-0 w-full rotate-12 -translate-x-1/3 -z-10 pointer-events-none"
+    />
 </main>
 
 {#if !isContactPage}
-    <Footer {...data.footer} />
-
     <div
-        use:inview={{ rootMargin: '0px 0px 40px 0px' }}
+        use:inview
+        class="hidden footer:block"
         on:change={handleInview}
     />
+
+    <Footer {...data.footer} />
 {/if}
 
 <Navigation items={data.navigation} />

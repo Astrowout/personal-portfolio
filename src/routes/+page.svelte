@@ -1,5 +1,5 @@
 <script lang="ts">
-    import PageBody from '$lib/components/PageBody/PageBody.svelte';
+    import PageBody from '$lib/components/PageBody.svelte';
 
     export let data;
 </script>
