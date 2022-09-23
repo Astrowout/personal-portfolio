@@ -10,7 +10,7 @@ import Expertise from './Expertise.svelte';
 import WorkGroup from './WorkGroup.svelte';
 import Song from './Song.svelte';
 import Stat from './Stat.svelte';
-import Experience from './Experience.svelte';
+import ExperienceGroup from './ExperienceGroup.svelte';
 
 const components = {
     "Hero": Hero,
@@ -24,7 +24,7 @@ const components = {
     "WorkGroup": WorkGroup,
     "Song": Song,
     "Stat": Stat,
-    "Experience": Experience,
+    "ExperienceGroup": ExperienceGroup,
 };
 
 export let body;

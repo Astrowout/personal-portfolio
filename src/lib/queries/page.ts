@@ -59,6 +59,17 @@ export default gql`
         }
     }
 
+    fragment experienceGroupFields on ExperienceGroup {
+        id
+        experiences {
+            id
+            title
+            role
+            time
+            url
+        }
+    }
+
     fragment expertiseFields on Expertise {
         id
         title
@@ -86,6 +97,7 @@ export default gql`
             ...expertiseFields
             ...songFields
             ...statFields
+            ...experienceGroupFields
         }
     }
 
