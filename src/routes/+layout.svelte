@@ -47,17 +47,19 @@ const handleInview = ({ detail }) => {
 <Header cta={data.mainCta} />
 
 <main
-    class="flex-grow relative bg-stone-100 shadow-xl overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-[40px]"
+    class="flex flex-col flex-grow relative bg-stone-100 shadow-xl overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-[40px]"
     class:scale-[96%]={isInView}
+    class:pb-16={!isContactPage}
 >
     {#key data.pathname}
         <div
+            class="flex flex-col flex-grow"
             in:fly={{
                 ...pageAnim,
                 delay: pageAnim.duration,
             }}
             out:fly={{
-                    ...pageAnim,
+                ...pageAnim,
             }}
         >
             <slot />

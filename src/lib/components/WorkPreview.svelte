@@ -17,7 +17,6 @@ onMount(() => {
 		Tilt.init(tiltContainer, {
 			max: 4,
 			speed: 500,
-			scale: 1.03,
 			"mouse-event-element": mouseContainer,
 		});
 	}
@@ -37,7 +36,7 @@ onDestroy(() => {
 >
 	{#if title}
 		<h4
-			class="inline-block text-center text-lg sm:text-xl lg:text-2xl text-white rounded-xl u-font-display uppercase px-4 pt-2 pb-4 bg-slate-900 translate-y-3 lg:translate-y-16 transition duration-500 group-hover:translate-y-3"
+			class="inline-block text-center sm:text-lg lg:text-xl text-white rounded-xl u-font-display uppercase px-4 pt-2 pb-4 bg-slate-900 translate-y-3 lg:translate-y-16 transition duration-500 group-hover:translate-y-4"
 		>
 			{ title }
 		</h4>
@@ -52,7 +51,7 @@ onDestroy(() => {
 			bind:this={tiltContainer}
 			id="tiltContainer"
 			data-tilt-mouse-event-element="#mouseContainer"
-			class="object-contain w-full relative z-10"
+			class="object-contain w-full relative z-10 drop-shadow"
 		/>
 	{/if}
 </a>

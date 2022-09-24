@@ -5,9 +5,9 @@ export default gql`
         id
         works {
             id
-            title
+            title: previewTitle
             slug
-            cols
+            url
             image {
                 url
                 alt
@@ -15,6 +15,7 @@ export default gql`
                 height
             }
         }
+        showCta
     }
 
     fragment tagGroupFields on TagGroup {
@@ -140,7 +141,6 @@ export default gql`
                 id: $id
             }
         ) {
-            enabled
             title
             body {
                 ...heroFields

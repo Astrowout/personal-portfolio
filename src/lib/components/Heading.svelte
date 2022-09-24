@@ -18,22 +18,22 @@ const handleLeave = ({ detail }) => {
 }
 </script>
 
-<div
+<h2
     use:inview={{ rootMargin: "0px 0px -180px 0px", threshold: 0.2 }}
     on:enter={handleEnter}
     on:leave={handleLeave}
     class="mb-12 md:mb-16 flex flex-col text-center items-center"
 >
     {#if title}
-        <h2
+        <span
             class="u-font-display uppercase text-3xl sm:text-4xl text-slate-900 u-anim-start"
             class:delay-100={isInView}
             class:u-anim-end={isInView}
         >
             { title }
-        </h2>
+        </span>
     {/if}
-    
+
     {#if subtitle}
         <h3
             class="order-first font-serif uppercase text-3xl sm:text-4xl text-slate-400 u-anim-start"
@@ -42,4 +42,4 @@ const handleLeave = ({ detail }) => {
             { subtitle }
         </h3>
     {/if}
-</div>
+</h2>
