@@ -16,7 +16,7 @@ export { className as class };
 </script>
 
 <div
-    class="flex flex-col items-start pb-4 border-b border-b-slate-200 {className}"
+    class="flex flex-col items-start pb-6 border-b border-b-slate-200 {className}"
     class:border-none={isLast}
     class:pb-0={isLast}
 >
@@ -25,7 +25,7 @@ export { className as class };
     </p>
 
     {#if time}
-        <p class="mt-1 u-font-display text-slate-500">
+        <p class="mt-1 u-font-display text-slate-400">
             {time}
         </p>
     {/if}
@@ -39,7 +39,7 @@ export { className as class };
     {#if link}
         <Link
             {...link}
-            class="mt-3 text-slate-500"
+            class="mt-3 text-slate-400"
         />
     {/if}
 

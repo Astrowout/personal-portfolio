@@ -73,7 +73,7 @@ const handleLeave = ({ detail }) => {
 		{/if}
 
 		{#if body && body.length}
-			<div class="flex flex-col gap-y-8">
+			<div class={cols === "full" ? "grid md:grid-cols-2 gap-8" : "flex flex-col gap-y-8"}>
 				<PageBody body={body} />
 			</div>
 		{/if}
