@@ -7,7 +7,6 @@ export let id;
 export let __typename;
 
 let loaded = false;
-let mounted = false;
 
 const preloadImage = () => {
     const img = new Image();
@@ -18,8 +17,6 @@ const preloadImage = () => {
 }
 
 onMount(() => {
-    mounted = true;
-
     preloadImage();
 });
 </script>
@@ -28,10 +25,10 @@ onMount(() => {
     <div class="u-container-sm grid md:grid-cols-2 items-center gap-y-6">
         <div
             class="u-prose u-max-w-prose transition duration-1000 ease-out delay-500"
-            class:opacity-0={!mounted}
-            class:translate-y-12={!mounted}
-            class:opacity-100={mounted}
-            class:translate-x-0={mounted}
+            class:opacity-0={!loaded}
+            class:translate-y-12={!loaded}
+            class:opacity-100={loaded}
+            class:translate-x-0={loaded}
         >
             {@html headline.html}
         </div>
@@ -40,11 +37,9 @@ onMount(() => {
             <div
                 class="drop-shadow-xl transition duration-1000 ease-out delay-700"
                 class:opacity-0={!loaded}
-                class:blur-lg={!loaded}
                 class:-translate-x-12={!loaded}
                 class:opacity-100={loaded}
                 class:translate-x-0={loaded}
-                class:blur-none={loaded}
             >
                 <div    
                     style="clip-path: url(#svgPath); -webkit-clip-path: url(#svgPath);" class="max-w-[240px] md:max-w-full -translate-x-1/4 md:translate-x-0 -z-10 overflow-hidden"

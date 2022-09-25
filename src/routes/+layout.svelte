@@ -56,7 +56,7 @@ const handleInview = ({ detail }) => {
             class="flex flex-col flex-grow"
             in:fly={{
                 ...pageAnim,
-                delay: pageAnim.duration,
+                delay: pageAnim.duration + 200,
             }}
             out:fly={{
                 ...pageAnim,

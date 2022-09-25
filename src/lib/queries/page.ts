@@ -8,7 +8,11 @@ export default gql`
             title: previewTitle
             slug
             image {
-                url
+                url (
+                    transformation: {
+                        image: { resize: { width: 760 } }
+                    }
+                )
                 alt
                 width
                 height
@@ -31,7 +35,11 @@ export default gql`
             html
         }
         image {
-            url
+            url (
+                transformation: {
+                    image: { resize: { width: 920 } }
+                }
+            )
             alt
             width
             height

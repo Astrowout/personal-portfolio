@@ -7,8 +7,8 @@ import Button from './Button.svelte';
 
 export let works;
 export let showCta = false;
-export let id;
-export let __typename;
+export let id = "";
+export let __typename = "";
 
 let isInView = false;
 
