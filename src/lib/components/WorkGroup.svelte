@@ -25,10 +25,10 @@ const handleLeave = ({ detail }) => {
 
 <div class="flex flex-col items-center">
 	<div
-		use:inview={{ rootMargin: "0px 0px -180px 0px", threshold: 0.2 }}
+		use:inview={{ rootMargin: "0px 0px -200px 0px" }}
 		on:enter={handleEnter}
 		on:leave={handleLeave}
-		class="w-full grid md:grid-cols-2 gap-6 lg:gap-8 items-start"
+		class="w-full grid lg:grid-cols-2 gap-x-6 gap-y-10 items-start"
 	>
 		{#each works as item, index (item.id)}
 			<div

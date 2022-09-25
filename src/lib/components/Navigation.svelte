@@ -35,7 +35,7 @@ onMount(() => {
             {#each items as item (item.id)}
                 <li>
                     <a
-                        href={item.slug || '/'}
+                        href={item.slug ? `/${item.slug}` : '/'}
                         class="block px-3 py-4 relative transition-opacity duration-300 hover:opacity-100"
                         class:opacity-60={!getIsActive(item.slug)}
                         class:opacity-100={getIsActive(item.slug)}

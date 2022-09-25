@@ -7,7 +7,6 @@ export default gql`
             id
             title: previewTitle
             slug
-            url
             image {
                 url
                 alt

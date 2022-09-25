@@ -76,7 +76,7 @@ const handleInview = ({ detail }) => {
 {#if !isContactPage}
     <div
         use:inview
-        class="hidden footer:block"
+        class="hidden footer:block w-px h-px"
         on:change={handleInview}
     />
 

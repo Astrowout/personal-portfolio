@@ -5,7 +5,6 @@ import Tilt from "vanilla-tilt";
 export let title;
 export let slug;
 export let image;
-export let cols;
 export let id;
 export let __typename;
 
@@ -36,9 +35,11 @@ onDestroy(() => {
 >
 	{#if title}
 		<h4
-			class="inline-block text-center sm:text-lg lg:text-xl text-white rounded-xl u-font-display uppercase px-4 pt-2 pb-4 bg-slate-900 translate-y-3 lg:translate-y-16 transition duration-500 group-hover:translate-y-4"
+			style="transform: translateZ(-20px);"
 		>
-			{ title }
+			<span class="inline-block relative -z-10 text-center sm:text-lg lg:text-xl text-white rounded-xl u-font-display uppercase px-4 pt-2 pb-4 bg-slate-900 translate-y-4 xl:translate-y-16 transition-transform duration-500 group-hover:translate-y-4">
+				{ title }
+			</span>
 		</h4>
 	{/if}
 
@@ -50,6 +51,7 @@ onDestroy(() => {
 			height={image.height}
 			bind:this={tiltContainer}
 			id="tiltContainer"
+			style="transform: translateZ(100px);"
 			data-tilt-mouse-event-element="#mouseContainer"
 			class="object-contain w-full relative z-10 drop-shadow"
 		/>

@@ -11,6 +11,14 @@
         @apply mt-6 sm:mt-8 lg:mt-12 text-lg sm:text-xl lg:text-2xl leading-normal sm:leading-normal lg:leading-normal;
     }
 
+    .prose table {
+        @apply mb-0;
+    }
+
+    .prose td p {
+        @apply m-0 text-lg;
+    }
+
     .u-max-w-prose {
         @apply max-w-[74ch];
     }
@@ -33,6 +41,10 @@
 
     .u-space-y-sm {
         @apply pt-8 pb-16 md:pb-24;
+    }
+
+    .u-space-y-none {
+        @apply pt-0 pb-16 md:pb-24;
     }
 
     .u-anim-start {

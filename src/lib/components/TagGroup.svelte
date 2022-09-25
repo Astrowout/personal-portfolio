@@ -5,8 +5,11 @@ import { inview } from 'svelte-inview';
 import Tag from "./Tag.svelte";
 
 export let tags;
-export let id;
-export let __typename;
+export let id = "";
+export let __typename = "";
+
+let className = "";
+export { className as class };
 
 let isInView = false;
 
@@ -25,7 +28,7 @@ const handleLeave = ({ detail }) => {
     use:inview={{ rootMargin: "0px 0px -120px 0px", threshold: 0.2 }}
     on:enter={handleEnter}
     on:leave={handleLeave}
-    class="flex w-full justify-center flex-wrap -m-1.5 lg:-m-2"
+    class="flex w-full justify-center flex-wrap -m-1.5 lg:-m-2 {className}"
 >
     {#each tags as tag, index (tag.id)}
         <li

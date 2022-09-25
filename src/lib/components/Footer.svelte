@@ -33,7 +33,7 @@ export let __typename;
             <LogoLine class="py-4" />
 
             <p class="text-stone-300 text-center">
-                © {year} wv.com | {credits}
+                © {year} woutvandesompele.be | {credits}
             </p>
         </div>
     </div>

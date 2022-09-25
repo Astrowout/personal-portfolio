@@ -1,13 +1,33 @@
 import { gql } from '@apollo/client/core/core.cjs';
 
 export default gql`
-    query WorkQuery($id: ID!) {
-        page (
+    query WorkQuery($slug: String!) {
+        work (
             where: {
-                id: $id
+                slug: $slug
             }
         ) {
             title
+            previewTitle
+            url
+            description {
+                html
+            }
+            tags {
+                id
+                label
+            }
+            images {
+                id
+                url
+                alt
+                width
+                height
+            }
+            video {
+                url
+                alt
+            }
         }
     }
 `;
