@@ -24,7 +24,7 @@ onMount(() => {
 <div class="u-space-x py-8 w-full">
     <div class="u-container-sm grid md:grid-cols-2 items-center gap-y-6">
         <div
-            class="u-prose u-max-w-prose transition duration-1000 ease-out delay-500"
+            class="u-prose u-max-w-prose transition duration-1000 ease-out delay-300"
             class:opacity-0={!loaded}
             class:translate-y-12={!loaded}
             class:opacity-100={loaded}
@@ -35,9 +35,9 @@ onMount(() => {
 
         {#if image}
             <div
-                class="drop-shadow-xl transition duration-1000 ease-out delay-700"
+                class="drop-shadow-xl transition duration-1000 ease-out delay-500"
                 class:opacity-0={!loaded}
-                class:-translate-x-12={!loaded}
+                class:-translate-x-16={!loaded}
                 class:opacity-100={loaded}
                 class:translate-x-0={loaded}
             >
