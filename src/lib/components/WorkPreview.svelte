@@ -51,7 +51,6 @@ onDestroy(() => {
 			height={image.height}
 			bind:this={tiltContainer}
 			id="tiltContainer"
-			style="transform: translateZ(100px);"
 			data-tilt-mouse-event-element="#mouseContainer"
 			class="object-contain w-full relative z-10 drop-shadow"
 		/>

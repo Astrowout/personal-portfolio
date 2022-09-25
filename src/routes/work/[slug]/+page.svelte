@@ -82,5 +82,9 @@ export let data;
                 />
             {/if}
         </Grid>
+
+        <BackLink href="/work">
+            {$page.data.t['work.back']}
+        </BackLink>
     </Section>
 {/if}
