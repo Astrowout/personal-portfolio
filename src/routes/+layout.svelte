@@ -29,8 +29,6 @@ let isInView = false;
 // }
 
 const handleInview = ({ detail }) => {
-    console.log(detail);
-    
     isInView = detail.inView;
 }
 </script>
@@ -40,11 +38,6 @@ const handleInview = ({ detail }) => {
     on:mousedown="{() => size.set(20)}"
 	on:mouseup="{() => size.set(10)}"
 /> -->
-<svelte:head>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-</svelte:head>
 
 <Header cta={data.mainCta} />
 
