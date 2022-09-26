@@ -1,6 +1,6 @@
 <script lang="ts">
 import { inview } from 'svelte-inview';
-import { spring } from 'svelte/motion';
+// import { spring } from 'svelte/motion';
 import { fly } from "svelte/transition";
 import { page } from '$app/stores';
 
@@ -16,28 +16,28 @@ export let data;
 $: isContactPage = $page.routeId === "contact";
 let isInView = false;
 
-let coords = spring({ x: 0, y: 0 }, {
-    stiffness: 0.1,
-    damping: 0.5,
-});
-let size = spring(10);
+// let coords = spring({ x: 0, y: 0 }, {
+//     stiffness: 0.1,
+//     damping: 0.5,
+// });
+// let size = spring(10);
 
-const updateCoords = (e) => {
-    if (e.clientX > 0 && e.clientY > 0) {
-        coords.set({ x: e.clientX, y: e.clientY });
-    }
-}
+// const updateCoords = (e) => {
+//     if (e.clientX > 0 && e.clientY > 0) {
+//         coords.set({ x: e.clientX, y: e.clientY });
+//     }
+// }
 
 const handleInview = ({ detail }) => {
     isInView = detail.inView;
 }
 </script>
 
-<svelte:window
+<!-- <svelte:window
     on:mousemove={updateCoords}
     on:mousedown="{() => size.set(20)}"
 	on:mouseup="{() => size.set(10)}"
-/>
+/> -->
 <svelte:head>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -85,7 +85,7 @@ const handleInview = ({ detail }) => {
 
 <Navigation items={data.navigation} />
 
-<svg
+<!-- <svg
     class="pointer-events-none fixed inset-0 w-full h-full z-10 hidden lg:block"
 >
 	<circle
@@ -94,4 +94,4 @@ const handleInview = ({ detail }) => {
         r={$size}
         class="stroke-stone-300 stroke-2 fill-transparent"
     />
-</svg>
+</svg> -->
