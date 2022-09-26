@@ -29,6 +29,8 @@ let isInView = false;
 // }
 
 const handleInview = ({ detail }) => {
+    console.log(detail);
+    
     isInView = detail.inView;
 }
 </script>
