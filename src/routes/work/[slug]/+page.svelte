@@ -65,7 +65,7 @@ export let data;
                             src={image.url}
                             width={image.width}
                             height={image.height}
-                            class="object-contain rounded-2xl shadow"
+                            class="object-contain rounded-xl shadow"
                         />
                     {/each}
                 {/if}

@@ -10,7 +10,7 @@
     }
 
     .plyr {
-        @apply col-span-6 drop-shadow rounded-2xl;
+        @apply col-span-6 drop-shadow rounded-xl;
     }
 
     #sprite-plyr {
