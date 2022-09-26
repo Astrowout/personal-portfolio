@@ -2,8 +2,6 @@ import { error } from "@sveltejs/kit";
 import query from "$lib/apollo";
 
 import WORK_QUERY from "$lib/queries/work";
-
-export const prerender = true;
  
 export async function load({ params }) {
     const { data } = await query(WORK_QUERY, {

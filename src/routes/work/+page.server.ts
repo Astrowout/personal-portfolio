@@ -2,8 +2,6 @@ import { error } from "@sveltejs/kit";
 import query from "$lib/apollo";
 
 import PAGE_QUERY from "$lib/queries/page";
-
-export const prerender = true;
  
 export async function load() {
     const { data } = await query(PAGE_QUERY, {
