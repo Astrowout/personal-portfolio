@@ -25,7 +25,7 @@ onMount(() => {
 
 <div class="fixed w-full z-50 inset-x-0 bottom-6 sm:bottom-8 pointer-events-none flex justify-center">
     <nav
-        class="bg-slate-900/90 rounded-xl backdrop-blur-sm shadow-md pointer-events-auto transition ease-out delay-700 duration-300"
+        class="bg-slate-900/90 rounded-xl backdrop-blur-sm shadow-md pointer-events-auto transition ease-out delay-700 duration-500"
         class:opacity-0={!mounted}
         class:translate-y-12={!mounted}
         class:opacity-100={mounted}

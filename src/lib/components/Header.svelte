@@ -14,25 +14,19 @@ onMount(() => {
 </script>
 
 <header class="u-space-x py-5 md:py-8 w-full bg-stone-100 relative z-10 pointer-events-auto">
-    <div class="u-container flex justify-between">
-        <span
-            class="transition duration-700 ease-out delay-200"
-            class:scale-0={!mounted}
-            class:scale-100={mounted}
-        >
-            <Logo />
-        </span>
+    <div
+        class="u-container flex justify-between transition ease-in-out duration-700 delay-100"
+        class:-translate-y-12={!mounted}
+        class:opacity-0={!mounted}
+        class:translate-y-0={mounted}
+        class:opacity-100={mounted}
+    >
+        <Logo />
         
         {#if cta}
-            <span
-                class:scale-0={!mounted}
-                class:scale-100={mounted}
-                class="flex transition duration-700 ease-out delay-300"
-            >
-                <Button href="/{cta.url}">
-                    { cta.label }
-                </Button>
-            </span>
+            <Button href="/{cta.url}">
+                { cta.label }
+            </Button>
         {/if}
     </div>
 </header>

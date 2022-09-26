@@ -11,7 +11,7 @@ export let __typename;
 	class="group flex flex-col items-center"
 >
 	{#if title}
-		<h4 class="inline-block relative -z-10 text-center sm:text-lg lg:text-xl text-white rounded-xl u-font-display uppercase px-4 pt-2 pb-4 bg-slate-900 translate-y-4 xl:translate-y-16 transition-transform duration-500 group-hover:translate-y-4">
+		<h4 class="inline-block relative -z-10 text-center sm:text-lg lg:text-xl text-white rounded-xl u-font-display uppercase px-4 pt-2 pb-4 bg-slate-900 translate-y-4 xl:translate-y-16 transition-transform duration-500 ease-in-out group-hover:translate-y-2">
 			{ title }
 		</h4>
 	{/if}
@@ -22,7 +22,7 @@ export let __typename;
 			src={image.url}
 			width={image.width}
 			height={image.height}
-			class="object-contain w-full relative z-10 drop-shadow"
+			class="object-contain transition duration-500 ease-in-out w-full relative z-10 drop-shadow group-hover:scale-105 group-hover:drop-shadow-xl"
 		/>
 	{/if}
 </a>

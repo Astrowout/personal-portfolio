@@ -35,7 +35,7 @@ onMount(() => {
 
         {#if image}
             <div
-                class="drop-shadow-xl transition duration-1000 ease-out delay-500"
+                class="drop-shadow-xl transition duration-1000 ease-in-out delay-500"
                 class:opacity-0={!loaded}
                 class:-translate-x-16={!loaded}
                 class:opacity-100={loaded}
