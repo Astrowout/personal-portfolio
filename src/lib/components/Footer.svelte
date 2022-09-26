@@ -30,6 +30,8 @@ export let __typename;
         </div>
         
         <div>
+            <div id="wcb" class="carbonbadge wcb-d"></div>
+
             <LogoLine class="py-4" />
 
             <p class="text-stone-300 text-center">
