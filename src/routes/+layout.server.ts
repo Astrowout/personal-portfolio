@@ -16,6 +16,7 @@ export async function load({ url: { pathname } }) {
             ...data.global,
             t: microcopy ? microcopy.copy : {},
             pathname,
+            meta: data.meta,
         };
     }
  

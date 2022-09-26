@@ -34,5 +34,12 @@ export default gql`
                 credits
             }
         }
+        meta (
+            where: {
+                id: "cl8j7gnqa5l9b0duqhizuvp5l"
+            }
+        ) {
+            description
+        }
     }
 `;

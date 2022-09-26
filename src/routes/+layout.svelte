@@ -38,6 +38,9 @@ const handleInview = ({ detail }) => {
     on:mousedown="{() => size.set(20)}"
 	on:mouseup="{() => size.set(10)}"
 /> -->
+<svelte:head>
+    <meta name="description" content={data.meta.description}>
+</svelte:head>
 
 <Header cta={data.mainCta} />
 
