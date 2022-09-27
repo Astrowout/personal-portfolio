@@ -25,7 +25,10 @@ const handleLeave = ({ detail }) => {
 </script>
 
 <ul
-    use:inview={{ rootMargin: "0px 0px -120px 0px", threshold: 0.2 }}
+    use:inview={{
+		rootMargin: "0px 0px -180px 0px",
+		unobserveOnEnter: true,
+	}}
     on:enter={handleEnter}
     on:leave={handleLeave}
     class="flex w-full justify-center flex-wrap -m-1.5 lg:-m-2 {className}"

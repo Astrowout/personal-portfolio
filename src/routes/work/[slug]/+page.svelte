@@ -79,11 +79,12 @@ export let data;
             {/if}
         </Grid>
 
-        <BackLink
-            href="/work"
-            class="mx-auto mt-8"
-        >
-            {$page.data.t['work.back']}
-        </BackLink>
     </Section>
 {/if}
+
+<BackLink
+    href="/work"
+    class="mx-auto"
+>
+    {$page.data.t['work.back']}
+</BackLink>

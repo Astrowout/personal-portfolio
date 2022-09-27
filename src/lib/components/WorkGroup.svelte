@@ -25,7 +25,10 @@ const handleLeave = ({ detail }) => {
 
 <div class="flex flex-col items-center">
 	<div
-		use:inview={{ rootMargin: "0px 0px -200px 0px" }}
+		use:inview={{
+			rootMargin: "0px 0px -200px 0px",
+			unobserveOnEnter: true,
+		}}
 		on:enter={handleEnter}
 		on:leave={handleLeave}
 		class="w-full grid lg:grid-cols-2 gap-x-6 gap-y-10 items-start"

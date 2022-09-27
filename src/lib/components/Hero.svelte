@@ -21,7 +21,7 @@ onMount(() => {
 });
 </script>
 
-<div class="u-space-x py-8 w-full">
+<div class="u-space-x py-8 lg:py-4 w-full">
     <div class="u-container-sm grid md:grid-cols-2 items-center gap-y-6">
         <div
             class="u-prose u-max-w-prose transition duration-1000 ease-out delay-300"
@@ -37,7 +37,7 @@ onMount(() => {
             <div
                 class="drop-shadow-xl transition duration-1000 ease-in-out delay-500"
                 class:opacity-0={!loaded}
-                class:-translate-x-16={!loaded}
+                class:-translate-x-10={!loaded}
                 class:opacity-100={loaded}
                 class:translate-x-0={loaded}
             >
