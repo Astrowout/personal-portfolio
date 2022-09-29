@@ -60,13 +60,22 @@ export let data;
             <div class="col-span-6 prose max-w-full">
                 {#if data.images && data.images.length}
                     {#each data.images as image (image.id)}
-                        <img
-                            alt={image.alt}
-                            src={image.url}
-                            width={image.width}
-                            height={image.height}
-                            class="object-contain rounded-xl shadow"
-                        />
+                        {#if image.mimeType === "application/pdf"}
+                            <embed
+                                src={image.url}
+                                width="1920"
+                                height="1080" 
+                                type="application/pdf"
+                            >
+                        {:else}
+                            <img
+                                alt={image.alt}
+                                src={image.url}
+                                width={image.width}
+                                height={image.height}
+                                class="object-contain rounded-xl shadow"
+                            />
+                        {/if}
                     {/each}
                 {/if}
             </div>
@@ -78,7 +87,6 @@ export let data;
                 />
             {/if}
         </Grid>
-
     </Section>
 {/if}
 
