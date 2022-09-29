@@ -61,12 +61,13 @@ export let data;
                 {#if data.images && data.images.length}
                     {#each data.images as image (image.id)}
                         {#if image.mimeType === "application/pdf"}
-                            <embed
-                                src={image.url}
-                                width="1920"
-                                height="1080" 
+                            <object
+                                title={image.alt}
+                                style="width:100%;"
+                                data={image.url}
+                                height="1080px" 
                                 type="application/pdf"
-                            >
+                            />
                         {:else}
                             <img
                                 alt={image.alt}
