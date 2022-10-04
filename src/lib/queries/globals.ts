@@ -40,6 +40,10 @@ export default gql`
             }
         ) {
             description
+            socialImage {
+                url
+                alt
+            }
         }
     }
 `;

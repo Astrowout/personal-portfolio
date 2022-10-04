@@ -40,6 +40,13 @@ const handleInview = ({ detail }) => {
 /> -->
 <svelte:head>
     <meta name="description" content={data.meta.description}>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://woutvandesompele.be">
+    <meta property="og:title" content="Wout Vandesompele">
+    <meta property="og:description" content="Creative Developer at Little Miss Robot in Ghent.">
+    <meta property="og:image" content={data.meta.socialImage.url}>
 </svelte:head>
 
 <Header cta={data.mainCta} />
