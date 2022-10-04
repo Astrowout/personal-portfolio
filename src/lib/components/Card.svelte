@@ -46,7 +46,7 @@ const handleLeave = ({ detail }) => {
 <div
 	use:inview={{
 		rootMargin: "0px 0px -180px 0px",
-		threshold: 0.2,
+		threshold: 0.1,
 		unobserveOnEnter: true,
 	}}
 	on:enter={handleEnter}

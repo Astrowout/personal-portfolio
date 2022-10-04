@@ -60,23 +60,13 @@ export let data;
             <div class="col-span-6 prose max-w-full">
                 {#if data.images && data.images.length}
                     {#each data.images as image (image.id)}
-                        {#if image.mimeType === "application/pdf"}
-                            <object
-                                title={image.alt}
-                                style="width:100%;"
-                                data={image.url}
-                                height="1080px" 
-                                type="application/pdf"
-                            />
-                        {:else}
-                            <img
-                                alt={image.alt}
-                                src={image.url}
-                                width={image.width}
-                                height={image.height}
-                                class="object-contain rounded-xl shadow"
-                            />
-                        {/if}
+                        <img
+                            alt={image.alt}
+                            src={image.url}
+                            width={image.width}
+                            height={image.height}
+                            class="object-contain w-full rounded-xl shadow"
+                        />
                     {/each}
                 {/if}
             </div>

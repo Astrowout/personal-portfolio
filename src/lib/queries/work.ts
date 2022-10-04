@@ -23,7 +23,6 @@ export default gql`
                 alt
                 width
                 height
-                mimeType
             }
             video {
                 url
