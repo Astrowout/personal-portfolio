@@ -9,6 +9,7 @@ import Section from '$lib/components/Section.svelte';
 import Button from '$lib/components/Button.svelte';
 import Text from '$lib/components/Text.svelte';
 import Video from '$lib/components/Video.svelte';
+import Lightbox from '$lib/components/Lightbox.svelte';
 
 export let data;
 </script>
@@ -60,13 +61,7 @@ export let data;
             <div class="col-span-6 prose max-w-full">
                 {#if data.images && data.images.length}
                     {#each data.images as image (image.id)}
-                        <img
-                            alt={image.alt}
-                            src={image.url}
-                            width={image.width}
-                            height={image.height}
-                            class="object-contain w-full rounded-xl shadow"
-                        />
+                        <Lightbox image={image} />
                     {/each}
                 {/if}
             </div>
