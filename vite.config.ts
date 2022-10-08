@@ -6,6 +6,13 @@ const config: UserConfig = {
 	server: {
 		port: 9000
 	},
+	build: {
+		rollupOptions: {
+			external: [
+				"website-carbon-badges/b.min"
+			]
+		}
+	}
 };
 
 export default config;

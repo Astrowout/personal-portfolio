@@ -36,6 +36,7 @@
 		"@apollo/client": "^3.6.9",
 		"graphql": "^16.6.0",
 		"plyr": "^3.7.2",
+		"svelte-carbonbadge": "^0.0.1",
 		"svelte-inview": "^3.0.1"
 	}
 }
