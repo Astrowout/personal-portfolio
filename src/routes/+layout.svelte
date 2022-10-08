@@ -56,7 +56,7 @@ const handleInview = ({ detail }) => {
 
 <main
     class="flex flex-col flex-grow relative bg-stone-100 shadow-xl overflow-hidden z-0 pointer-events-auto transition-all duration-500 rounded-b-[40px]"
-    class:scale-[96%]={isInView}
+    style:transform={isInView ? 'scale(0.96)' : 'none'}
     class:pb-16={!isContactPage}
 >
     {#key data.pathname}
