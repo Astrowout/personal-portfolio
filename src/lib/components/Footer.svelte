@@ -1,6 +1,4 @@
 <script lang="ts">
-import Carbonbadge from "svelte-carbonbadge";
-
 import Heading from './Heading.svelte';
 import LogoLine from './LogoLine.svelte';
 import LinkGroup from './LinkGroup.svelte';
@@ -32,7 +30,8 @@ export let __typename;
         </div>
         
         <div>
-            <Carbonbadge />
+            <div id="wcb" class="carbonbadge"></div>
+            <script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
 
             <LogoLine class="py-4" />
 
