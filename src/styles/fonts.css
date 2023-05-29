@@ -1,7 +1,7 @@
 @layer base {
-    @font-face {
-        font-family: 'Newake';
-        src:  url('../assets/fonts/Newake/Newake.woff2') format('woff2'),
-                url('../assets/fonts/Newake/Newake.woff') format('woff');
-    }
+	@font-face {
+		font-family: 'Newake';
+		src: url('../assets/fonts/Newake/Newake.woff2') format('woff2'),
+			url('../assets/fonts/Newake/Newake.woff') format('woff');
+	}
 }

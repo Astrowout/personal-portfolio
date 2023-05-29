@@ -1,11 +1,11 @@
 <script lang="ts">
-import Progress from './Progress.svelte';
+	import Progress from './Progress.svelte';
 
-export let title;
-export let image;
-export let progress;
-export let id;
-export let __typename;
+	export let title;
+	export let image;
+	export let progress;
+	export let id;
+	export let __typename;
 </script>
 
 <div class="flex flex-col lg:flex-row lg:items-center justify-between -mx-3 -my-1.5">
@@ -23,7 +23,7 @@ export let __typename;
 
 		{#if title}
 			<p class="text-lg font-medium text-slate-900">
-				{ title }
+				{title}
 			</p>
 		{/if}
 	</div>

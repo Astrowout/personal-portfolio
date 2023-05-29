@@ -1,1 +1,1 @@
-export { default as pageAnim } from "./page";
+export { default as pageAnim } from './page';

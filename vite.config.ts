@@ -5,7 +5,7 @@ const config: UserConfig = {
 	plugins: [sveltekit()],
 	server: {
 		port: 9000
-	},
+	}
 };
 
 export default config;

@@ -1,13 +1,8 @@
 <script lang="ts">
-export let image = null;
+	export let image = null;
 </script>
 
-<a
-	href={image.url}
-	target="_blank"
-	rel="noopener noreferrer"
-	class="w-full"
->
+<a href={image.url} target="_blank" rel="noopener noreferrer" class="w-full">
 	<img
 		alt={image.alt}
 		src={image.url}

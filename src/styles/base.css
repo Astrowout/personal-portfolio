@@ -1,19 +1,19 @@
 @layer base {
-    :root {
-        @apply bg-stone-100 font-serif overflow-x-hidden pointer-events-none;
+	:root {
+		@apply bg-stone-100 font-serif overflow-x-hidden;
 
-        --plyr-color-main: #0f172a;
-    }
+		--plyr-color-main: #0f172a;
+	}
 
-    body > div {
-        @apply flex flex-col min-h-screen;
-    }
+	body > div {
+		@apply flex flex-col min-h-screen;
+	}
 
-    .plyr {
-        @apply col-span-6 drop-shadow rounded-xl;
-    }
+	.plyr {
+		@apply col-span-6 drop-shadow rounded-xl;
+	}
 
-    #sprite-plyr {
-        @apply sr-only;
-    }
+	#sprite-plyr {
+		@apply sr-only;
+	}
 }
