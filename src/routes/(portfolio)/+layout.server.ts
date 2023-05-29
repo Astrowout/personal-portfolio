@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import type { Config } from '@sveltejs/adapter-vercel';
 
 import query from '$lib/apollo';
 
@@ -6,6 +7,10 @@ import GLOBAL_QUERY from '$lib/queries/globals';
 import MICROCOPY_QUERY from '$lib/queries/microcopy';
 
 export const prerender = true;
+
+export const config: Config = {
+    runtime: 'edge'
+};
 
 export async function load({ url: { pathname } }) {
 	const { data } = await query(GLOBAL_QUERY);

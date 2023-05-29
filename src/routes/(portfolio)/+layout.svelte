@@ -1,14 +1,19 @@
 <script lang="ts">
 	import { inview } from 'svelte-inview';
+	import type { Config } from '@sveltejs/adapter-vercel';
 	import { fly } from 'svelte/transition';
+	
 	import { page } from '$app/stores';
-
 	import { pageAnim } from '$lib/animations';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
 
 	import '../../styles/app.css';
+
+	export const config: Config = {
+		runtime: 'edge'
+	};
 
 	export let data;
 
