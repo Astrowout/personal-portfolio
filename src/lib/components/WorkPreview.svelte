@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Tag from "./Tag.svelte";
+	import Tag from './Tag.svelte';
 
 	export let title;
 	export let slug;
@@ -10,7 +10,9 @@
 </script>
 
 <a href="/work/{slug}" class="group flex flex-col relative sm:p-6 sm:pb-5">
-	<span class="absolute inset-0 w-full h-full -z-10 rounded-xl sm:bg-slate-50 sm:border-2 border-slate-200 transition duration-300 ease-in-out lg:group-hover:drop-shadow-xl lg:group-hover:scale-105 lg:group-hover:skew-x-1 lg:group-hover:-rotate-1" />
+	<span
+		class="absolute inset-0 w-full h-full -z-10 rounded-xl sm:bg-slate-50 sm:border-2 border-slate-200 transition duration-300 ease-in-out lg:group-hover:drop-shadow-xl lg:group-hover:scale-105 lg:group-hover:skew-x-1 lg:group-hover:-rotate-1"
+	/>
 
 	<div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5">
 		{#if title}
