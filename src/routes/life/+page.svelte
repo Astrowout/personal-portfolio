@@ -6,7 +6,6 @@
 	import AuthForm from '$lib/components/AuthForm.svelte';
 	import InfiniteGrid from '$lib/components/InfiniteGrid.svelte';
 
-	export let data;
 	export let form: ActionData;
 </script>
 

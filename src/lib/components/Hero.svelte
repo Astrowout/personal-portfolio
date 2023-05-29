@@ -3,8 +3,8 @@
 
 	export let headline;
 	export let image;
-	export let id;
-	export let __typename;
+	export const id = '';
+	export const __typename = '';
 
 	let loaded = false;
 

@@ -2,8 +2,8 @@
 	import Experience from './Experience.svelte';
 
 	export let experiences;
-	export let id;
-	export let __typename;
+	export const id = '';
+	export const __typename = '';
 </script>
 
 {#each experiences as item, index (item.id)}

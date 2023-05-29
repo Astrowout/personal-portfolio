@@ -5,8 +5,8 @@
 	export let slug;
 	export let image;
 	export let tags;
-	export let id;
-	export let __typename;
+	export const id = '';
+	export const __typename = '';
 </script>
 
 <a href="/work/{slug}" class="group flex flex-col relative sm:p-6 sm:pb-5">

@@ -3,7 +3,7 @@
 
 	export let subtitle = '';
 	export let title = '';
-	export let __typename;
+	export const __typename = '';
 
 	let isInView = false;
 

@@ -4,8 +4,8 @@
 	import Tag from './Tag.svelte';
 
 	export let tags;
-	export let id = '';
-	export let __typename = '';
+	export const id = '';
+	export const __typename = '';
 
 	let className = '';
 	export { className as class };

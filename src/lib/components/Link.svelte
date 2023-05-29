@@ -2,7 +2,7 @@
 	export let label = '';
 	export let url = '';
 	export let external = false;
-	export let __typename;
+	export const __typename = '';
 
 	let className = '';
 	export { className as class };

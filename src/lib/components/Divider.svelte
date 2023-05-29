@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let id;
-	export let __typename;
+	export const id = '';
+	export const __typename = '';
 </script>
 
 <div class="u-space-x">

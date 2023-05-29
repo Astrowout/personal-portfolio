@@ -5,8 +5,8 @@
 
 	export let title = '';
 	export let links = [];
-	export let id;
-	export let __typename;
+	export const id = '';
+	export const __typename = '';
 
 	let isInView = false;
 

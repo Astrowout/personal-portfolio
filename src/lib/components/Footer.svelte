@@ -9,7 +9,7 @@
 	export let heading;
 	export let body;
 	export let credits;
-	export let __typename;
+	export const __typename = '';
 </script>
 
 <svelte:element

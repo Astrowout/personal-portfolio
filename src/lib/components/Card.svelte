@@ -7,8 +7,8 @@
 	export let body = null;
 	export let images = [];
 	export let cols;
-	export let id = '';
-	export let __typename = '';
+	export const id = '';
+	export const __typename = '';
 
 	let colClass = 'col-span-6';
 	let isInView = false;

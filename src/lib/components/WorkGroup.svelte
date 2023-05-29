@@ -7,8 +7,8 @@
 
 	export let works;
 	export let showCta = false;
-	export let id = '';
-	export let __typename = '';
+	export const id = '';
+	export const __typename = '';
 
 	let isInView = false;
 

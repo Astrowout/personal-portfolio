@@ -4,8 +4,8 @@
 	export let title;
 	export let image;
 	export let progress;
-	export let id;
-	export let __typename;
+	export const id = '';
+	export const __typename = '';
 </script>
 
 <div class="flex flex-col lg:flex-row lg:items-center justify-between -mx-3 -my-1.5">
