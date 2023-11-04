@@ -1,6 +1,7 @@
 import { fail } from '@sveltejs/kit';
 
 import type { Actions } from './$types';
+import { PASSWORD } from '$env/static/private';
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -12,10 +13,12 @@ export const actions = {
 			return fail(400, { missing: true });
 		}
 
-		// if (password !== hash(password)) {
-		//     return fail(400, { incorrect: true });
-		// }
+		if (password !== PASSWORD) {
+		    return fail(400, { incorrect: true });
+		}
 
-		return { success: true };
+		return {
+			success: true,
+		};
 	}
 } satisfies Actions;

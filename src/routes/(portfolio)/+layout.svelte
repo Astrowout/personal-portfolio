@@ -23,6 +23,8 @@
 	const handleInview = ({ detail }) => {
 		isInView = detail.inView;
 	};
+
+	
 </script>
 
 <svelte:head>

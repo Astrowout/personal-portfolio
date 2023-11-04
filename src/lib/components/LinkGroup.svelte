@@ -31,7 +31,7 @@
 	on:leave={handleLeave}
 >
 	{#if title}
-		<h4 class="text-xl md:text-2xl text-slate-400 u-anim-start" class:u-anim-end={isInView}>
+		<h4 class="text-xl md:text-2xl text-slate-400 u-font-display u-anim-start" class:u-anim-end={isInView}>
 			{title}
 		</h4>
 	{/if}

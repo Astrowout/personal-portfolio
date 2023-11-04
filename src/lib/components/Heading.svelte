@@ -29,7 +29,7 @@
 >
 	{#if title}
 		<span
-			class="u-font-display uppercase text-3xl sm:text-4xl text-slate-900 u-anim-start"
+			class="u-font-display text-3xl sm:text-4xl text-slate-900 u-anim-start"
 			class:delay-100={isInView}
 			class:u-anim-end={isInView}
 		>
@@ -39,7 +39,7 @@
 
 	{#if subtitle}
 		<h3
-			class="order-first font-serif uppercase text-3xl sm:text-4xl text-slate-400 u-anim-start"
+			class="order-first u-font-display text-3xl sm:text-4xl text-slate-400 u-anim-start"
 			class:u-anim-end={isInView}
 		>
 			{subtitle}

@@ -12,11 +12,9 @@
 <svelte:element
 	this={renderComponent()}
 	{...$$props}
-	class="font-medium text-lg relative group {className}"
+	class="text-lg relative group {className}"
 >
-	<span
-		class="border-slate-200 border-2 bg-slate-50 h-10 z-10 px-6 flex items-center rounded-xl transition-transform group-hover:translate-y-0.5"
-	>
+	<span class="border-slate-200 border-2 text-slate-600 u-font-display group-hover:text-slate-900 bg-slate-50 h-10 z-10 px-6 flex items-center rounded-xl transition group-hover:translate-y-0.5">
 		<slot />
 	</span>
 

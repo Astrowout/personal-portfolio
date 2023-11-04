@@ -20,18 +20,18 @@
 	class:border-none={isLast}
 	class:pb-0={isLast}
 >
-	<p class="u-font-display text-lg md:text-xl text-slate-900">
-		{title}
-	</p>
-
 	{#if time}
-		<p class="mt-1 u-font-display text-slate-400">
+		<p class="text-slate-600 text-xs bg-slate-200 rounded-md py-1 px-2">
 			{time}
 		</p>
 	{/if}
 
+	<p class="font-bold text-lg mt-2 md:text-xl text-slate-900">
+		{title}
+	</p>
+
 	{#if role}
-		<p class="text-lg text-slate-600">
+		<p class="text-lg mt-1 text-slate-600">
 			{role}
 		</p>
 	{/if}

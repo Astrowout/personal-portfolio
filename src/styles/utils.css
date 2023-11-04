@@ -1,14 +1,14 @@
 @layer utilities {
 	.u-font-display {
-		@apply font-display tracking-wider;
+		@apply font-display;
 	}
 
 	.u-prose h1 {
-		@apply text-2xl sm:text-3xl lg:text-4xl leading-normal sm:leading-normal lg:leading-normal;
+		@apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight sm:leading-tight lg:leading-tight font-display;
 	}
 
 	.u-prose h2 {
-		@apply mt-6 sm:mt-8 lg:mt-12 text-lg sm:text-xl lg:text-2xl leading-normal sm:leading-normal lg:leading-normal;
+		@apply mt-6 sm:mt-8 lg:mt-12 text-lg sm:text-xl leading-normal sm:leading-normal lg:leading-normal text-slate-600;
 	}
 
 	.prose table {

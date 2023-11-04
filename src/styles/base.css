@@ -1,11 +1,11 @@
 @layer base {
 	:root {
-		@apply bg-stone-100 font-serif overflow-x-hidden;
+		@apply bg-stone-100 font-sans overflow-x-hidden;
 
 		--plyr-color-main: #0f172a;
 	}
 
-	body > div {
+	body {
 		@apply flex flex-col min-h-screen;
 	}
 

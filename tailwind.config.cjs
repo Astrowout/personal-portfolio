@@ -7,11 +7,11 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				serif: ['Alegreya', ...defaultTheme.fontFamily.serif],
-				display: ['Newake', ...defaultTheme.fontFamily.sans]
+				sans: ['Geist', ...defaultTheme.fontFamily.sans],
+				display: ['Playfair Display', ...defaultTheme.fontFamily.serif]
 			},
 			screens: {
-				footer: { raw: `(min-width: ${defaultTheme.screens.md}) and (min-height: 800px)` }
+				footer: { raw: `(min-width: ${defaultTheme.screens.lg}) and (min-height: 800px)` }
 			}
 		},
 		container: {

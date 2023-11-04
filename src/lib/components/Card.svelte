@@ -55,7 +55,7 @@
 	class="u-anim-start relative overflow-hidden rounded-xl shadow-xl shadow-stone-400/10 border-2 border-slate-200 bg-slate-50 px-5 pt-4 pb-6 md:px-7 md:pt-5 md:pb-10 {colClass}"
 >
 	{#if title}
-		<h4 class="text-xl md:text-2xl text-slate-400 mb-6 font-medium">
+		<h4 class="text-xl md:text-2xl text-slate-400 mb-6 u-font-display">
 			{title}
 		</h4>
 	{/if}
