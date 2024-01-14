@@ -10,7 +10,7 @@
 
 <a
 	href={url}
-	class="flex items-center gap-x-1.5 text-lg group hover:underline text-slate-900 {className}"
+	class="flex items-center gap-x-1.5 group hover:underline text-slate-900 {className}"
 	rel="noopener noreferrer"
 	target={external ? '_blank' : 'self'}
 >

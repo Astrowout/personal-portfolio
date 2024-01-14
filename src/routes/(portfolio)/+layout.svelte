@@ -32,7 +32,7 @@
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://woutvandesompele.be" />
+	<meta property="og:url" content="https://astrowout.space" />
 	<meta property="og:title" content="Wout Vandesompele's digital space" />
 	<meta property="og:description" content={data.meta.description} />
 	<meta property="og:image" content={data.meta.socialImage.url} />

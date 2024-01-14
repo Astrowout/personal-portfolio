@@ -22,7 +22,7 @@
 		{/if}
 
 		{#if title}
-			<p class="text-lg font-medium text-slate-900">
+			<p class="text-lg font-bold text-slate-900">
 				{title}
 			</p>
 		{/if}

@@ -9,7 +9,7 @@
 </script>
 
 <div class="flex flex-col {className}">
-	<p class="u-font-display text-4xl xl:text-5xl text-slate-900 lining-nums">
+	<p class="text-4xl xl:text-5xl text-slate-900 lining-nums">
 		{number}
 	</p>
 

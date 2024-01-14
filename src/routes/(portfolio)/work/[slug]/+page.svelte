@@ -20,7 +20,7 @@
 
 <Section compact>
 	<h1
-		class="max-w-5xl text-2xl leading-snug sm:text-4xl sm:leading-snug text-center lg:text-5xl lg:leading-snug u-font-display text-slate-900"
+		class="max-w-5xl text-2xl leading-snug sm:text-4xl sm:leading-snug text-center lg:text-5xl lg:leading-snug text-slate-900"
 	>
 		{data.title}
 	</h1>

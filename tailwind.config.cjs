@@ -7,8 +7,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Geist', ...defaultTheme.fontFamily.sans],
-				display: ['Playfair Display', ...defaultTheme.fontFamily.serif]
+				mono: ['Geist Mono', ...defaultTheme.fontFamily.mono]
 			},
 			screens: {
 				footer: { raw: `(min-width: ${defaultTheme.screens.lg}) and (min-height: 800px)` }

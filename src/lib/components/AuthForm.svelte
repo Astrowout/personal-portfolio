@@ -6,7 +6,7 @@
 
 <div class="w-full rounded-xl bg-white p-5 md:px-8 py-10 shadow-lg shadow-stone-400/20 border-2 border-stone-200 max-w-lg">
 	{#if title}
-		<h1 class="u-font-display uppercase text-2xl md:text-3xl text-center text-slate-800">
+		<h1 class="uppercase text-2xl md:text-3xl text-center text-slate-800">
 			{title}
 		</h1>
 	{/if}

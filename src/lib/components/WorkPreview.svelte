@@ -17,7 +17,7 @@
 	<div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5">
 		{#if title}
 			<h4
-				class="inline-block relative text-center font-bold text-lg sm:text-xl lg:text-2xl text-slate-800 u-font-display"
+				class="inline-block relative text-center font-bold text-lg sm:text-xl lg:text-2xl text-slate-800"
 			>
 				{title}
 			</h4>

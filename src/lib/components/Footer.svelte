@@ -103,7 +103,7 @@
 			<LogoLine class="py-4" />
 
 			<p class="text-stone-300 text-center">
-				© {year} woutvandesompele.be | {credits}
+				© {year} astrowout.space | {credits}
 			</p>
 		</div>
 	</div>
