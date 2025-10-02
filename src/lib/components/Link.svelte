@@ -1,11 +1,20 @@
 <script lang="ts">
-	export let label = '';
-	export let url = '';
-	export let external = false;
 	export const __typename = '';
 
-	let className = '';
-	export { className as class };
+	interface Props {
+		label?: string;
+		url?: string;
+		external?: boolean;
+		class?: string;
+	}
+
+	let {
+		label = '',
+		url = '',
+		external = false,
+		class: className = ''
+	}: Props = $props();
+	
 </script>
 
 <a

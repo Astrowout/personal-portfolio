@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	export let headline;
-	export let image;
+	let { headline, image } = $props();
 	export const id = '';
 	export const __typename = '';
 
-	let loaded = false;
+	let loaded = $state(false);
 
 	const preloadImage = () => {
 		const img = new Image();

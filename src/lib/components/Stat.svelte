@@ -1,11 +1,15 @@
 <script lang="ts">
-	export let number;
-	export let description;
 	export const id = '';
 	export const __typename = '';
 
-	let className = '';
-	export { className as class };
+	interface Props {
+		number: any;
+		description: any;
+		class?: string;
+	}
+
+	let { number, description, class: className = '' }: Props = $props();
+	
 </script>
 
 <div class="flex flex-col {className}">

@@ -1,7 +1,12 @@
 <script lang="ts">
-	let className = '';
-	export { className as class };
-	export let compact = false;
+	
+	interface Props {
+		class?: string;
+		compact?: boolean;
+		children?: import('svelte').Snippet;
+	}
+
+	let { class: className = '', compact = false, children }: Props = $props();
 </script>
 
 <div
@@ -9,5 +14,5 @@
 		? 'text-sm'
 		: 'text-base'}"
 >
-	<slot />
+	{@render children?.()}
 </div>

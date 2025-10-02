@@ -11,7 +11,11 @@
 		runtime: 'edge'
 	};
 
-	export let form: ActionData;
+	interface Props {
+		form: ActionData;
+	}
+
+	let { form }: Props = $props();
 </script>
 
 <svelte:head>

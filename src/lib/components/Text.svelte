@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let content;
+	let { content } = $props();
 	export const id = '';
 	export const __typename = '';
 </script>

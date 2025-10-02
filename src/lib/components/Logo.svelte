@@ -1,6 +1,10 @@
 <script lang="ts">
-	let className = '';
-	export { className as class };
+	interface Props {
+		class?: string;
+	}
+
+	let { class: className = '' }: Props = $props();
+	
 </script>
 
 <svelte:element this={className ? 'span' : 'a'} href="/" class={className || 'text-slate-900'}>

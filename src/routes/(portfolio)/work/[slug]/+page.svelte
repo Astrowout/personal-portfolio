@@ -11,7 +11,7 @@
 	import Video from '$lib/components/Video.svelte';
 	import Lightbox from '$lib/components/Lightbox.svelte';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>

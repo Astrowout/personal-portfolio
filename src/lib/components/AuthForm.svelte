@@ -1,7 +1,11 @@
 <script lang="ts">
 	import Button from './Button.svelte';
 
-	export let title = '';
+	interface Props {
+		title?: string;
+	}
+
+	let { title = '' }: Props = $props();
 </script>
 
 <div class="w-full rounded-xl bg-white p-5 md:px-8 py-10 shadow-lg shadow-stone-400/20 border-2 border-stone-200 max-w-lg">

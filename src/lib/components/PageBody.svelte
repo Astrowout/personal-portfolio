@@ -27,13 +27,14 @@
 		ExperienceGroup: ExperienceGroup
 	};
 
-	export let body;
+	let { body } = $props();
 </script>
 
 {#if body && !!body.length}
 	{#each body as component (component.id)}
 		{#if components[component.__typename]}
-			<svelte:component this={components[component.__typename]} {...component} />
+			{@const SvelteComponent = components[component.__typename]}
+			<SvelteComponent {...component} />
 		{/if}
 	{/each}
 {/if}

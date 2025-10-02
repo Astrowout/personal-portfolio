@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PageBody from '$lib/components/PageBody.svelte';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>

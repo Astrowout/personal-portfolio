@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Experience from './Experience.svelte';
 
-	export let experiences;
+	let { experiences } = $props();
 	export const id = '';
 	export const __typename = '';
 </script>

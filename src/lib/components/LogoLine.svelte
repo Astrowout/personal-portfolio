@@ -3,8 +3,8 @@
 
 	const REPEAT_AMOUNT = 28;
 
-	let className;
-	export { className as class };
+	let { class: className } = $props();
+	
 </script>
 
 <div class="flex items-center justify-center gap-x-8 {className}">

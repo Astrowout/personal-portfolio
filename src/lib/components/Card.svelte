@@ -1,36 +1,51 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { inview } from 'svelte-inview';
 
 	import PageBody from './PageBody.svelte';
 
-	export let title;
-	export let body = null;
-	export let images = [];
-	export let cols;
+	interface Props {
+		title: any;
+		body?: any;
+		images?: any;
+		cols: any;
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		title,
+		body = null,
+		images = [],
+		cols,
+		children
+	}: Props = $props();
 	export const id = '';
 	export const __typename = '';
 
-	let colClass = 'col-span-6';
-	let isInView = false;
+	let colClass = $state('col-span-6');
+	let isInView = $state(false);
 	const gridClass = cols === 'full' ? 'grid lg:grid-cols-2 gap-8' : 'flex flex-col gap-y-8';
 
-	$: switch (cols) {
-		case 'full':
-			colClass = 'col-span-6';
-			break;
-		case 'half':
-			colClass = 'col-span-6 lg:col-span-3';
-			break;
-		case 'third':
-			colClass = 'col-span-6 lg:col-span-3 xl:col-span-2';
-			break;
-		case 'two_thirds':
-			colClass = 'col-span-6 xl:col-span-4';
-			break;
+	run(() => {
+		switch (cols) {
+			case 'full':
+				colClass = 'col-span-6';
+				break;
+			case 'half':
+				colClass = 'col-span-6 lg:col-span-3';
+				break;
+			case 'third':
+				colClass = 'col-span-6 lg:col-span-3 xl:col-span-2';
+				break;
+			case 'two_thirds':
+				colClass = 'col-span-6 xl:col-span-4';
+				break;
 
-		default:
-			break;
-	}
+			default:
+				break;
+		}
+	});
 
 	const handleEnter = () => {
 		isInView = true;
@@ -49,8 +64,8 @@
 		threshold: 0.1,
 		unobserveOnEnter: true
 	}}
-	on:enter={handleEnter}
-	on:leave={handleLeave}
+	onenter={handleEnter}
+	onleave={handleLeave}
 	class:u-anim-end={isInView}
 	class="u-anim-start relative overflow-hidden rounded-xl shadow-xl shadow-stone-400/10 border-2 border-slate-200 bg-slate-50 px-5 pt-4 pb-6 md:px-7 md:pt-5 md:pb-10 {colClass}"
 >
@@ -76,8 +91,8 @@
 	{/if}
 
 	<div class={gridClass}>
-		{#if $$slots.default}
-			<slot />
+		{#if children}
+			{@render children?.()}
 		{:else if body && body.length}
 			<PageBody {body} />
 		{/if}

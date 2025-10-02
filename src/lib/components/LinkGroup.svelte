@@ -3,12 +3,16 @@
 
 	import Link from './Link.svelte';
 
-	export let title = '';
-	export let links = [];
+	interface Props {
+		title?: string;
+		links?: any;
+	}
+
+	let { title = '', links = [] }: Props = $props();
 	export const id = '';
 	export const __typename = '';
 
-	let isInView = false;
+	let isInView = $state(false);
 
 	const handleEnter = () => {
 		isInView = true;
@@ -27,8 +31,8 @@
 		rootMargin: '0px 0px -180px 0px',
 		unobserveOnEnter: true
 	}}
-	on:enter={handleEnter}
-	on:leave={handleLeave}
+	onenter={handleEnter}
+	onleave={handleLeave}
 >
 	{#if title}
 		<h4 class="text-lg md:text-xl text-slate-400 u-anim-start" class:u-anim-end={isInView}>

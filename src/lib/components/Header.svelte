@@ -4,9 +4,9 @@
 	import Logo from './Logo.svelte';
 	import Button from './Button.svelte';
 
-	export let cta;
+	let { cta } = $props();
 
-	let mounted = false;
+	let mounted = $state(false);
 
 	onMount(() => {
 		mounted = true;

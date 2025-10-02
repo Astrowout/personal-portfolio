@@ -4,9 +4,13 @@
 
 	import 'plyr/dist/plyr.css';
 
-	export let src = '';
-	export let alt = '';
-	let videoEl = null;
+	interface Props {
+		src?: string;
+		alt?: string;
+	}
+
+	let { src = '', alt = '' }: Props = $props();
+	let videoEl = $state(null);
 	let player = null;
 
 	onMount(() => {

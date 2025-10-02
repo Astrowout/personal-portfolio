@@ -2,10 +2,21 @@
 	import Heading from './Heading.svelte';
 	import PageBody from './PageBody.svelte';
 
-	export let compact = false;
-	export let noSpacing = false;
-	export let heading = null;
-	export let body = null;
+	interface Props {
+		compact?: boolean;
+		noSpacing?: boolean;
+		heading?: any;
+		body?: any;
+		children?: import('svelte').Snippet;
+	}
+
+	let {
+		compact = false,
+		noSpacing = false,
+		heading = null,
+		body = null,
+		children
+	}: Props = $props();
 	export const id = '';
 	export const __typename = '';
 </script>
@@ -21,9 +32,9 @@
 			<Heading {...heading} />
 		{/if}
 
-		{#if $$slots.default}
+		{#if children}
 			<div class="flex flex-col items-center gap-y-8">
-				<slot />
+				{@render children?.()}
 			</div>
 		{:else}
 			<div class="flex flex-col gap-y-16">

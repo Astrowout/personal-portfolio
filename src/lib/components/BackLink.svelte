@@ -1,8 +1,13 @@
 <script lang="ts">
-	export let href = '/';
 
-	let className = '';
-	export { className as class };
+	interface Props {
+		href?: string;
+		class?: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { href = '/', class: className = '', children }: Props = $props();
+	
 </script>
 
 <a
@@ -23,6 +28,6 @@
 	</svg>
 
 	<span>
-		<slot />
+		{@render children?.()}
 	</span>
 </a>

@@ -2,17 +2,29 @@
 	import Link from './Link.svelte';
 	import Button from './Button.svelte';
 
-	export let title;
-	export let role;
-	export let time;
-	export let link;
-	export let cta;
-	export let isLast = false;
 	export const id = '';
 	export const __typename = '';
 
-	let className = '';
-	export { className as class };
+	interface Props {
+		title: any;
+		role: any;
+		time: any;
+		link: any;
+		cta: any;
+		isLast?: boolean;
+		class?: string;
+	}
+
+	let {
+		title,
+		role,
+		time,
+		link,
+		cta,
+		isLast = false,
+		class: className = ''
+	}: Props = $props();
+	
 </script>
 
 <div

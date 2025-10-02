@@ -3,14 +3,18 @@
 
 	import Tag from './Tag.svelte';
 
-	export let tags;
 	export const id = '';
 	export const __typename = '';
 
-	let className = '';
-	export { className as class };
+	interface Props {
+		tags: any;
+		class?: string;
+	}
 
-	let isInView = false;
+	let { tags, class: className = '' }: Props = $props();
+	
+
+	let isInView = $state(false);
 
 	const handleEnter = () => {
 		isInView = true;
@@ -28,8 +32,8 @@
 		rootMargin: '0px 0px -180px 0px',
 		unobserveOnEnter: true
 	}}
-	on:enter={handleEnter}
-	on:leave={handleLeave}
+	onenter={handleEnter}
+	onleave={handleLeave}
 	class="flex w-full justify-center flex-wrap -m-1.5 lg:-m-2 {className}"
 >
 	{#each tags as tag, index (tag.id)}

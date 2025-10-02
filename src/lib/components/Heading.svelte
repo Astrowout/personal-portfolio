@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { inview } from 'svelte-inview';
 
-	export let subtitle = '';
-	export let title = '';
+	interface Props {
+		subtitle?: string;
+		title?: string;
+	}
+
+	let { subtitle = '', title = '' }: Props = $props();
 	export const __typename = '';
 
-	let isInView = false;
+	let isInView = $state(false);
 
 	const handleEnter = () => {
 		isInView = true;
@@ -23,8 +27,8 @@
 		rootMargin: '0px 0px -180px 0px',
 		unobserveOnEnter: true
 	}}
-	on:enter={handleEnter}
-	on:leave={handleLeave}
+	onenter={handleEnter}
+	onleave={handleLeave}
 	class="mb-12 md:mb-16 flex flex-col text-center items-center"
 >
 	{#if title}

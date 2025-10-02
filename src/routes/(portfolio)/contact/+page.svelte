@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>

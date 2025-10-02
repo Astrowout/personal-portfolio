@@ -5,10 +5,19 @@
 
 	const year = new Date().getFullYear();
 
-	export let asPage = false;
-	export let heading;
-	export let body;
-	export let credits;
+	interface Props {
+		asPage?: boolean;
+		heading: any;
+		body: any;
+		credits: any;
+	}
+
+	let {
+		asPage = false,
+		heading,
+		body,
+		credits
+	}: Props = $props();
 	export const __typename = '';
 </script>
 

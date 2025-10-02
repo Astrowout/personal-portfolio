@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let spotifySongId = '';
+	interface Props {
+		spotifySongId?: string;
+	}
+
+	let { spotifySongId = '' }: Props = $props();
 	export const id = '';
 	export const __typename = '';
 </script>
@@ -15,7 +19,7 @@
 	allowfullscreen={false}
 	allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 	loading="lazy"
-/>
+></iframe>
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"

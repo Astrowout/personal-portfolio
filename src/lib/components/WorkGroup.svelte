@@ -5,12 +5,16 @@
 	import WorkPreview from './WorkPreview.svelte';
 	import Button from './Button.svelte';
 
-	export let works;
-	export let showCta = false;
+	interface Props {
+		works: any;
+		showCta?: boolean;
+	}
+
+	let { works, showCta = false }: Props = $props();
 	export const id = '';
 	export const __typename = '';
 
-	let isInView = false;
+	let isInView = $state(false);
 
 	const handleEnter = () => {
 		isInView = true;
@@ -29,8 +33,8 @@
 			rootMargin: '0px 0px -200px 0px',
 			unobserveOnEnter: true
 		}}
-		on:enter={handleEnter}
-		on:leave={handleLeave}
+		onenter={handleEnter}
+		onleave={handleLeave}
 		class="w-full grid lg:grid-cols-2 gap-x-10 gap-y-12 items-start"
 	>
 		{#each works as item, index (item.id)}

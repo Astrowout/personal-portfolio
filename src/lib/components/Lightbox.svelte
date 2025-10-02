@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let image = null;
+	interface Props {
+		image?: any;
+	}
+
+	let { image = null }: Props = $props();
 </script>
 
 <a href={image.url} target="_blank" rel="noopener noreferrer" class="w-full">
