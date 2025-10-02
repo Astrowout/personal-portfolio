@@ -9,7 +9,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
 
-	import '../../styles/app.css';
+	import '../styles/app.css';
 	import type { Snippet } from 'svelte';
 
 	export const config: Config = {
