@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { inview } from 'svelte-inview';
+	import { inview } from '$lib/directives/inview';
 
 	import Link from './Link.svelte';
 
@@ -31,8 +31,8 @@
 		rootMargin: '0px 0px -180px 0px',
 		unobserveOnEnter: true
 	}}
-	onenter={handleEnter}
-	onleave={handleLeave}
+	oninview_enter={handleEnter}
+	oninview_leave={handleLeave}
 >
 	{#if title}
 		<h4 class="text-lg md:text-xl text-slate-400 u-anim-start" class:u-anim-end={isInView}>

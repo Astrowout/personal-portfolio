@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { inview } from 'svelte-inview';
+	import { inview } from '$lib/directives/inview';
 
 	import WorkPreview from './WorkPreview.svelte';
 	import Button from './Button.svelte';
@@ -33,8 +33,8 @@
 			rootMargin: '0px 0px -200px 0px',
 			unobserveOnEnter: true
 		}}
-		onenter={handleEnter}
-		onleave={handleLeave}
+		oninview_enter={handleEnter}
+		oninview_leave={handleLeave}
 		class="w-full grid lg:grid-cols-2 gap-x-10 gap-y-12 items-start"
 	>
 		{#each works as item, index (item.id)}

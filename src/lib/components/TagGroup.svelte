@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { inview } from 'svelte-inview';
+	import { inview } from '$lib/directives/inview';
 
 	import Tag from './Tag.svelte';
 
@@ -32,8 +32,8 @@
 		rootMargin: '0px 0px -180px 0px',
 		unobserveOnEnter: true
 	}}
-	onenter={handleEnter}
-	onleave={handleLeave}
+	oninview_enter={handleEnter}
+	oninview_leave={handleLeave}
 	class="flex w-full justify-center flex-wrap -m-1.5 lg:-m-2 {className}"
 >
 	{#each tags as tag, index (tag.id)}

@@ -1,16 +1,15 @@
-<!-- @migration-task Error while migrating Svelte code: Cannot use `export let` in runes mode — use `$props()` instead
-https://svelte.dev/e/legacy_export_invalid -->
 <script lang="ts">
+	const { items } = $props();
+	let mounted = $state(false);
+
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 
-	export let items = [];
-
-	let mounted = false;
-
-	const getIsActive = $derived.by((slug) => {
-		return $page.url.pathname.replace(/\//, '') === slug || ($page.url.pathname === '/' && !slug);
-	});
+	const pathname = $derived(page.url.pathname);
+	
+	const getIsActive = (slug) => {
+		return pathname.replace(/\//, '') === slug || (pathname === '/' && !slug);
+	};
 
 	onMount(() => {
 		mounted = true;

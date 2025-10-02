@@ -1,8 +1,15 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client/core/core.cjs';
+import apollo from '@apollo/client/core/core.cjs';
 import { PUBLIC_API_URL } from '$env/static/public';
 
+const { ApolloClient, InMemoryCache, HttpLink, gql } = apollo;
+
+export { gql };
+
 const apolloClient = new ApolloClient({
-	uri: PUBLIC_API_URL,
+	link: new HttpLink({
+		uri: PUBLIC_API_URL,
+		fetch,
+	}),
 	cache: new InMemoryCache(),
 	defaultOptions: {
 		watchQuery: {
@@ -14,9 +21,13 @@ const apolloClient = new ApolloClient({
 	}
 });
 
+interface QueryResponse {
+	page: any;
+}
+
 const query = async (q, variables = {}) => {
 	try {
-		return apolloClient.query({
+		return apolloClient.query<QueryResponse>({
 			query: q,
 			variables
 		});

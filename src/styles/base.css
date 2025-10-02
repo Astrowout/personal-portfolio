@@ -1,19 +1,9 @@
 @layer base {
 	:root {
 		@apply bg-stone-100 font-mono overflow-x-hidden;
-
-		--plyr-color-main: #0f172a;
 	}
 
 	body {
 		@apply flex flex-col min-h-screen;
-	}
-
-	.plyr {
-		@apply col-span-6 drop-shadow rounded-xl;
-	}
-
-	#sprite-plyr {
-		@apply sr-only;
 	}
 }

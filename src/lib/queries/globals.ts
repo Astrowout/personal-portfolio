@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client/core/core.cjs';
+import { gql } from "$lib/apollo";
 
 export default gql`
 	query GlobalQuery {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { inview } from 'svelte-inview';
+	import { inview } from '$lib/directives/inview';
 
 	interface Props {
 		subtitle?: string;
@@ -27,8 +27,8 @@
 		rootMargin: '0px 0px -180px 0px',
 		unobserveOnEnter: true
 	}}
-	onenter={handleEnter}
-	onleave={handleLeave}
+	oninview_enter={handleEnter}
+	oninview_leave={handleLeave}
 	class="mb-12 md:mb-16 flex flex-col text-center items-center"
 >
 	{#if title}
@@ -42,11 +42,11 @@
 	{/if}
 
 	{#if subtitle}
-		<h3
+		<span
 			class="order-first text-3xl sm:text-4xl text-slate-400 u-anim-start"
 			class:u-anim-end={isInView}
 		>
 			{subtitle}
-		</h3>
+		</span>
 	{/if}
 </h2>

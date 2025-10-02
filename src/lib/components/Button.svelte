@@ -19,5 +19,5 @@
 		<slot />
 	</span>
 
-	<div class="absolute inset-0 w-full h-full bg-slate-300 rounded-lg -z-10 translate-y-1" />
+	<div class="absolute inset-0 w-full h-full bg-slate-300 rounded-lg -z-10 translate-y-1"></div>
 </svelte:element>

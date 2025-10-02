@@ -1,8 +1,5 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
-
-	import { inview } from 'svelte-inview';
-
+	import { inview } from '$lib/directives/inview';
 	import PageBody from './PageBody.svelte';
 
 	interface Props {
@@ -27,7 +24,7 @@
 	let isInView = $state(false);
 	const gridClass = cols === 'full' ? 'grid lg:grid-cols-2 gap-8' : 'flex flex-col gap-y-8';
 
-	run(() => {
+	$effect(() => {
 		switch (cols) {
 			case 'full':
 				colClass = 'col-span-6';
@@ -64,8 +61,8 @@
 		threshold: 0.1,
 		unobserveOnEnter: true
 	}}
-	onenter={handleEnter}
-	onleave={handleLeave}
+	oninview_enter={handleEnter}
+	oninview_leave={handleLeave}
 	class:u-anim-end={isInView}
 	class="u-anim-start relative overflow-hidden rounded-xl shadow-xl shadow-stone-400/10 border-2 border-slate-200 bg-slate-50 px-5 pt-4 pb-6 md:px-7 md:pt-5 md:pb-10 {colClass}"
 >

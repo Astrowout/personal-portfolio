@@ -34,9 +34,8 @@
 	"type": "module",
 	"dependencies": {
 		"@apollo/client": "^4.0.7",
+		"@tailwindcss/postcss": "^4.1.14",
 		"@tailwindcss/vite": "^4.1.14",
-		"graphql": "^16.11.0",
-		"plyr": "^3.8.3",
-		"svelte-inview": "^4.0.4"
+		"graphql": "^16.11.0"
 	}
 }

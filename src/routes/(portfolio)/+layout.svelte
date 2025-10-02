@@ -1,7 +1,5 @@
-<!-- @migration-task Error while migrating Svelte code: Cannot use `export let` in runes mode — use `$props()` instead
-https://svelte.dev/e/legacy_export_invalid -->
 <script lang="ts">
-	import { inview } from 'svelte-inview';
+	import { inview } from '$lib/directives/inview';
 	import type { Config } from '@sveltejs/adapter-vercel';
 	import { fly } from 'svelte/transition';
 	
@@ -12,21 +10,21 @@ https://svelte.dev/e/legacy_export_invalid -->
 	import Navigation from '$lib/components/Navigation.svelte';
 
 	import '../../styles/app.css';
+	import type { Snippet } from 'svelte';
 
 	export const config: Config = {
 		runtime: 'edge'
 	};
 
-	export let data;
+	let { data, children }: { data: any, children: Snippet } = $props();
 
 	const isContactPage = $derived($page.url.pathname === '/contact');
-	let isInView = false;
+
+	let isInView = $state(false);
 
 	const handleInview = ({ detail }) => {
 		isInView = detail.inView;
 	};
-
-	
 </script>
 
 <svelte:head>
@@ -61,7 +59,7 @@ https://svelte.dev/e/legacy_export_invalid -->
 				...pageAnim
 			}}
 		>
-			<slot />
+			{@render children()}
 		</div>
 	{/key}
 
@@ -73,7 +71,7 @@ https://svelte.dev/e/legacy_export_invalid -->
 </main>
 
 {#if !isContactPage}
-	<div use:inview class="hidden footer:block w-px h-px" on:inview_change={handleInview} />
+	<div use:inview class="hidden footer:block w-px h-px" oninview_change={handleInview}></div>
 
 	<Footer {...data.footer} />
 {/if}
