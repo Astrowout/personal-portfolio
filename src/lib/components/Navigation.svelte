@@ -6,9 +6,9 @@
 
 	let mounted = false;
 
-	$: getIsActive = (slug) => {
+	const getIsActive = $derived.by((slug) => {
 		return $page.url.pathname.replace(/\//, '') === slug || ($page.url.pathname === '/' && !slug);
-	};
+	});
 
 	onMount(() => {
 		mounted = true;

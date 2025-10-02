@@ -17,7 +17,7 @@
 
 	export let data;
 
-	$: isContactPage = $page.url.pathname === '/contact';
+	const isContactPage = $derived($page.url.pathname === '/contact');
 	let isInView = false;
 
 	const handleInview = ({ detail }) => {

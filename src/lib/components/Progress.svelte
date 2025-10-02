@@ -22,15 +22,17 @@
 		$progress = value;
 	});
 
-	let labelKey = 'progress.level_1';
-
-	$: if (value >= 25 && value < 50) {
-		labelKey = 'progress.level_2';
-	} else if (value >= 50 && value < 90) {
-		labelKey = 'progress.level_3';
-	} else if (value >= 90) {
-		labelKey = 'progress.level_4';
-	}
+	const labelKey = $derived.by(() => {
+		if (value >= 25 && value < 50) {
+			return 'progress.level_2';
+		} else if (value >= 50 && value < 90) {
+			return 'progress.level_3';
+		} else if (value >= 90) {
+			return 'progress.level_4';
+		} else {
+			return 'progress.level_1';
+		}
+	});
 </script>
 
 <div class="flex flex-grow flex-col items-center gap-y-2 {className}">
