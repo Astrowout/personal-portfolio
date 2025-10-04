@@ -34,12 +34,6 @@ export default gql`
 		headline {
 			html
 		}
-		image {
-			url(transformation: { image: { resize: { width: 920 } } })
-			alt
-			width
-			height
-		}
 	}
 
 	fragment songFields on Song {

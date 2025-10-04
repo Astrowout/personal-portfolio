@@ -14,12 +14,25 @@
     --font-serif: Erode-Variable, serif;
     --font-display: Tanker-Regular, sans-serif;
 
-    /* Breakpoint config */
-    --container-center: true;
+    /* Animations */
+    --animate-grid: grid 15s linear infinite;
 }
 
-@custom-variant footer (min-width: var(--breakpoint-lg)) and (min-height: 800px);
+@custom-variant footer {
+    @media screen and (min-width: 1024px) and (min-height: 800px) {
+        @slot;
+    }
+}
 
 html {
   font-family: var(--font-serif);
+}
+
+@keyframes grid {
+    0% {
+        transform: translateY(-20%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
