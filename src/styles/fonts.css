@@ -1,9 +1,23 @@
-@layer base {
-	@font-face {
-		font-family: 'Switzer Variable';
-		src: url('../assets/fonts/Switzer/Switzer-Variable.woff2') format('woff2');
-		font-weight: 100 900;
-		font-display: swap;
-		font-style: normal;
-	}
+@font-face {
+  font-family: 'Erode-Variable';
+  src: url('../assets/fonts/Erode/Erode-Variable.woff2') format('woff2');
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Erode-VariableItalic';
+  src: url('../assets/fonts/Erode/Erode-VariableItalic.woff2') format('woff2');
+  font-weight: 300 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Tanker-Regular';
+  src: url('../assets/fonts/Tanker/Tanker-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
 }

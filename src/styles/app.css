@@ -1,4 +1,13 @@
-@import 'tailwindcss';
-@import './base.css';
 @import './fonts.css';
+@import 'tailwindcss';
 @import './utils.css';
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-serif: Erode Variable, serif;
+  --font-display: Tanker-Regular, sans-serif;
+}
+
+html {
+  font-family: var(--font-serif);
+}

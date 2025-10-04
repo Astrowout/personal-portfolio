@@ -33,7 +33,7 @@
 >
 	{#if title}
 		<span
-			class="text-3xl sm:text-4xl text-slate-900 u-anim-start font-bold"
+			class="text-3xl sm:text-4xl text-slate-900 u-anim-start font-bold uppercase font-display"
 			class:delay-100={isInView}
 			class:u-anim-end={isInView}
 		>
@@ -43,7 +43,7 @@
 
 	{#if subtitle}
 		<span
-			class="order-first text-3xl sm:text-4xl text-slate-400 u-anim-start"
+			class="order-first text-3xl sm:text-4xl text-slate-400 u-anim-start uppercase font-display"
 			class:u-anim-end={isInView}
 		>
 			{subtitle}

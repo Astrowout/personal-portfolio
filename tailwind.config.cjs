@@ -7,7 +7,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Switzer Variable', ...defaultTheme.fontFamily.sans]
+				sans: ['Tanker-Regular', ...defaultTheme.fontFamily.sans]
 			},
 			screens: {
 				footer: { raw: `(min-width: ${defaultTheme.screens.lg}) and (min-height: 800px)` }
