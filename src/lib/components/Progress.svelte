@@ -35,7 +35,7 @@ https://svelte.dev/e/legacy_export_invalid -->
 	});
 </script>
 
-<div class="flex flex-grow flex-col items-center gap-y-2 {className}">
+<div class="flex grow flex-col items-center gap-y-2 {className}">
 	<progress value={$progress} max="100" class="appearance-none w-full h-2 rounded-full overflow-hidden outline outline-1 outline-offset-1 outline-slate-300 [&::-webkit-progress-bar]:bg-slate-50 [&::-webkit-progress-bar]:shadow-inner [&::-webkit-progress-value]:bg-slate-600 [&::-webkit-progress-value]:rounded-full">
 		<span style="width: {value}%;">
 			{value}%

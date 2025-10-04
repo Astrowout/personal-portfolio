@@ -27,7 +27,7 @@
 <div class="u-space-x py-8 lg:py-4 w-full">
 	<div class="u-container-sm grid md:grid-cols-2 items-center gap-y-6 gap-x-12">
 		<div
-			class="u-prose u-max-w-prose transition duration-1000 ease-out delay-300"
+			class="text-2xl/10 sm:text-3xl/12 transition duration-1000 ease-out delay-300"
 			class:opacity-0={!loaded}
 			class:translate-y-12={!loaded}
 			class:opacity-100={loaded}

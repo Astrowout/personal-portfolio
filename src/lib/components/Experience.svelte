@@ -33,7 +33,7 @@
 	class:pb-0={isLast}
 >
 	{#if time}
-		<p class="text-slate-600 text-xs bg-slate-200 rounded-md py-1 px-2">
+		<p class="text-slate-600 text-sm bg-slate-200 rounded-md py-0.5 px-1.5">
 			{time}
 		</p>
 	{/if}

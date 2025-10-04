@@ -44,13 +44,13 @@
 <Header cta={data.mainCta} />
 
 <main
-	class="flex flex-col flex-grow relative bg-stone-100 shadow-xl overflow-hidden z-20 transition-all duration-500 rounded-b-[40px]"
+	class="flex flex-col grow relative bg-stone-100 shadow-xl overflow-hidden z-20 transition-all duration-500 rounded-b-[40px]"
 	style:transform={isInView ? 'scale(0.96)' : 'none'}
 	class:pb-16={!isContactPage}
 >
 	{#key data.pathname}
 		<div
-			class="flex flex-col flex-grow"
+			class="flex flex-col grow"
 			in:fly={{
 				...pageAnim,
 				delay: pageAnim.duration + 200

@@ -29,7 +29,7 @@
 				<li>
 					<a
 						href={item.slug ? `/${item.slug}` : '/'}
-						class={`flex gap-x-1.5 items-center px-4 py-3 relative transition-colors rounded-md ${
+						class={`flex gap-x-1.5 items-center px-4 py-3 font-display text-lg relative transition-colors rounded-md ${
 							getIsActive(item.slug)
 								? "bg-slate-900 text-white"
 								: "bg-slate-900/30 hover:bg-slate-900/40 backdrop-blur-sm text-white/80 hover:text-white"

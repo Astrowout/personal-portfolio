@@ -15,7 +15,7 @@
 	{...$$props}
 	class="text-lg relative group {className}"
 >
-	<span class="border-slate-200 border-2 text-slate-600 font-bold pt-0.5 group-hover:text-slate-900 rounded-lg bg-slate-50 h-10 z-10 px-6 flex items-center transition group-hover:translate-y-1">
+	<span class="border-slate-200 border-2 text-slate-600 font-display pt-0.5 group-hover:text-slate-900 rounded-lg bg-slate-50 h-10 z-10 px-6 flex items-center transition group-hover:translate-y-1">
 		<slot />
 	</span>
 

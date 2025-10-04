@@ -3,10 +3,22 @@
 @import './utils.css';
 @plugin "@tailwindcss/typography";
 
+/* Safelist classes */
+@source inline("col-span-2");
+@source inline("col-span-3");
+@source inline("col-span-4");
+@source inline("col-span-6");
+
 @theme {
-  --font-serif: Erode Variable, serif;
-  --font-display: Tanker-Regular, sans-serif;
+    /* Custom fonts */
+    --font-serif: Erode-Variable, serif;
+    --font-display: Tanker-Regular, sans-serif;
+
+    /* Breakpoint config */
+    --container-center: true;
 }
+
+@custom-variant footer (min-width: var(--breakpoint-lg)) and (min-height: 800px);
 
 html {
   font-family: var(--font-serif);
